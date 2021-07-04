@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Preview from './Preview'
 
-function App() {
+import Logo from "./assets/logo.svg"
+import ProjectPage from './ProjectPage';
+
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <iframe src="https://jcw87.github.io/c2-sans-fight/" title="Game"></iframe>
+        <div id="content">
+          <div id="projectList">
+            <Preview icon={Logo} alt="Alt text">
+              <ProjectPage />
+            </Preview>
+          </div>
+          <div id="sidebar">
+            <div className="clickable">Resume</div>
+          </div>
+        </div>
+        <div id="footer">
+          Site programmed and hosted by Will Farhat - {(new Date().getFullYear())}
+        </div>
       </header>
     </div>
   );
 }
-
-export default App;
