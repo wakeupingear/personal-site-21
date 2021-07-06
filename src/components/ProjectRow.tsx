@@ -1,6 +1,6 @@
 import React, { cloneElement, ReactElement, useState } from 'react'
 
-import ProjectPage from './ProjectPage';
+import CloseButton from './CloseButton';
 
 import Outset from './pages/Outset'
 
@@ -9,11 +9,9 @@ interface Props {
 }
 
 export default function ProjectRow(props: Props): ReactElement {
-    const [classList, setClassList] = useState("expandedPage pageAnimation");
-    const [pageData, setPageData] = useState(<div></div>);
-    const [pageID, setPageID] = useState("");
-
-    let page: ReactElement = <div className={classList}>{pageData}</div>;
+    const [classList,setClassList]=useState("expandedPage pageAnimation");
+    const [pageData,setPageData]=useState(<div></div>);
+    const [pageID,setPageID]=useState("");
 
     function loadContent(id: string) {
         switch (id) {
@@ -25,10 +23,10 @@ export default function ProjectRow(props: Props): ReactElement {
 
     function buttonClicked(id: string): void {
         let isActive: boolean = (classList.includes("opening"));
-        const opened: boolean = (pageID === id);
+        const opened:boolean=(pageID===id||id==="");
         if (isActive) {
             if (opened) { //click to close
-                setClassList(classList.replace(" opening", "") + " closing");
+                setClassList(classList.replace(" opening","")+" closing");
                 setPageID("");
             }
             else { //switch content
@@ -37,11 +35,13 @@ export default function ProjectRow(props: Props): ReactElement {
             }
         }
         else {
-            setClassList(classList.replace(" closing", "") + " opening");
+            setClassList(classList.replace(" closing","")+" opening");
             setPageData(loadContent(id));
             setPageID(id);
         }
     }
+
+    let page: ReactElement = <div className={classList}><CloseButton id="" onclick={buttonClicked}/>{pageData}</div>;
 
     return (
         <div className="column">
@@ -49,7 +49,7 @@ export default function ProjectRow(props: Props): ReactElement {
                 {props.children.map(function (element) {
                     return (cloneElement(
                         element,
-                        { buttonClicked: buttonClicked }
+                        { onclick: buttonClicked }
                     ));
                 })}
             </div>

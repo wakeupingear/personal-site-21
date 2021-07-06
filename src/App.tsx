@@ -1,7 +1,6 @@
 import './App.css';
 import Preview from './components/Preview';
 import ProjectRow from './components/ProjectRow';
-import ProjectPage from './components/ProjectPage';
 import Sidebar from './components/Sidebar';
 
 import Outset from "./assets/outsetBg.PNG";

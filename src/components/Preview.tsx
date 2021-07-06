@@ -3,14 +3,14 @@ interface PreviewBox {
     icon: string,
     alt: string,
     style: React.CSSProperties,
-    buttonClicked?:Function
+    onclick?:Function
 }
 
 export default function Preivew(props: PreviewBox) {
 
     function clicked(){
-        if (props.buttonClicked!==undefined){
-            props.buttonClicked(props.id);
+        if (props.onclick!==undefined){
+            props.onclick(props.id);
         }
     }
 
