@@ -7,7 +7,6 @@ import { Helmet } from 'react-helmet';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Helmet>Will Farhat</Helmet>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

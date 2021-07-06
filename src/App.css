@@ -1,36 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
-
 .App {
   text-align: center;
 }
 
+body {
+  background: linear-gradient(270deg, #2b6396, #c37c46);
+  background-size: 400% 400%;
+  -webkit-animation: bgAnim 30s ease infinite;
+  -moz-animation: bgAnim 30s ease infinite;
+  animation: bgAnim 30s ease infinite;
+}
+
 .App-header {
-  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
   font-family: 'Montserrat';
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: max(100%, 100vh);
 }
 
-a{
+@-webkit-keyframes bgAnim {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes bgAnim {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes bgAnim {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 iframe {
   border-style: hidden;
-  width: 100vw;
+  width: 100%;
   height: 40vw;
 }
 
-.clickable, .socialLink{
+.clickable, .socialLink {
   cursor: pointer;
 }
 
-.clickable:hover, .socialLink:hover{
+.clickable:hover, .socialLink:hover {
   opacity: 0.6;
 }
 
@@ -46,8 +88,8 @@ iframe {
   color: white;
 }
 
-#resumeBox{
-  color:white;
+#resumeBox {
+  color: white;
 }
 
 #sidebar {
@@ -55,20 +97,43 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:2vw 0 2vw 0;
+  padding: 2vw 0 2vw 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
 
 #projectList {
-  display: flex;
+  display: inline-flex;
   width: 100%;
+  flex-direction: column;
+  height: 0%;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.column {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 0;
+  min-width: 0;
+  flex: 0 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .previewBox {
   padding: 0px;
-  width: 50%;
-  height: 50%;
-  cursor: pointer;
-  background-color: red;
 }
 
 .previewBox img {
@@ -76,8 +141,58 @@ iframe {
   height: 100%;
 }
 
+.expandedPage {
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  transform-origin: top;
+  height: 0%;
+  transform-style: preserve-3d;
+  transform-origin: 0% 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pageAnimation {
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.opening {
+  animation-name: anim-open;
+}
+
+.closing {
+  animation-name: anim-close;
+}
+
+@keyframes anim-open {
+  from {
+    height: 0%;
+    transform:scaleY(0);
+  }
+  to {
+    height: 100%;
+    transform:scaleY(1);
+  }
+}
+
+@keyframes anim-close {
+  from {
+    height: 100%;
+    transform:scaleY(1);
+  }
+  to {
+    height: 0%;
+    transform:scaleY(0);
+    display: none;
+  }
+}
+
 #footer {
-  background-color: green;
-  padding:1vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1vw;
   margin: 2vw;
+  color: white;
 }

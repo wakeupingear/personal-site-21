@@ -1,32 +1,33 @@
-import React from 'react';
 import './App.css';
-import Preview from './Preview';
-import ProjectPage from './ProjectPage';
+import Preview from './components/Preview';
+import ProjectRow from './components/ProjectRow';
+import ProjectPage from './components/ProjectPage';
+import Sidebar from './components/Sidebar';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram,faLinkedin,faTwitter,faYoutube,faGithub } from '@fortawesome/free-brands-svg-icons';
-
-import Logo from "./assets/logo.svg";
+import Outset from "./assets/outsetBg.PNG";
+import Inc from "./assets/incLifeTitleSquare.png";
+import THK from "./assets/thkLogo.jpg";
+import Jam from "./assets/jamGames.png";
 
 export default function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
         <iframe src="https://jcw87.github.io/c2-sans-fight/" title="Game"></iframe>
         <div id="content">
           <div id="projectList">
-            <Preview icon={Logo} alt="Alt text">
-              <ProjectPage />
-            </Preview>
+            <ProjectRow>
+              <Preview id="Outset" icon={Outset} alt="Alt text" style={{ width: "63%" }} />
+              <Preview id="Inc" icon={Inc} alt="Alt text" style={{ width: "37%" }} />
+            </ProjectRow>
+            <ProjectRow>
+              <Preview id="THK" icon={THK} alt="Alt text" style={{ width: "50%" }} />
+              <Preview id="Jam" icon={Jam} alt="Alt text" style={{ width: "50%" }} />
+            </ProjectRow>
           </div>
-          <div id="sidebar">
-            <a className="socialLink" target="_blank" href="https://www.instagram.com/will_farhat/"><FontAwesomeIcon icon={faGithub} /></a>
-            <a className="socialLink" target="_blank" href="https://www.instagram.com/will_farhat/"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a className="socialLink" target="_blank" href="https://www.instagram.com/will_farhat/"><FontAwesomeIcon icon={faYoutube} /></a>
-            <a className="socialLink" target="_blank" href="https://www.instagram.com/will_farhat/"><FontAwesomeIcon icon={faTwitter} /></a>
-            <a id="resumeBox" className="clickable" href="./resources/WillFarhatResume.docx" download>Resume</a>
-          </div>
+          <Sidebar />
         </div>
         <div id="footer">
           Site programmed and hosted by Will Farhat - {(new Date().getFullYear())}
