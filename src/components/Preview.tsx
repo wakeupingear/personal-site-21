@@ -1,8 +1,8 @@
 interface PreviewBox {
     id: string,
     icon: string,
-    alt: string,
     style: React.CSSProperties,
+    year:string,
     onclick?:Function
 }
 
@@ -16,7 +16,10 @@ export default function Preivew(props: PreviewBox) {
 
     return (
         <div className="previewBox clickable" onClick={clicked} style={props.style}>
-            <img src={props.icon} alt={props.alt}></img>
+            <div className="previewDate">
+                {props.year}
+            </div>
+            <img src={props.icon} alt={props.id}></img>
         </div>
     )
 }

@@ -3,19 +3,30 @@ import React, { cloneElement, ReactElement, useState } from 'react'
 import CloseButton from './CloseButton';
 
 import Outset from './pages/Outset'
+import CFE from './pages/CFE'
+import Freehand from './pages/Freehand'
+import Remotion from './pages/Remotion'
+import THK from './pages/THK'
+import Jam from './pages/Jam'
+import Inc from './pages/Inc'
 
 interface Props {
-    children: ReactElement[]
+    children: ReactElement[] | ReactElement
 }
 
 export default function ProjectRow(props: Props): ReactElement {
-    const [classList,setClassList]=useState("expandedPage pageAnimation");
-    const [pageData,setPageData]=useState(<div></div>);
-    const [pageID,setPageID]=useState("");
+    const [classList, setClassList] = useState("expandedPage pageAnimation");
+    const [pageData, setPageData] = useState(<div></div>);
+    const [pageID, setPageID] = useState("");
 
     function loadContent(id: string) {
         switch (id) {
-            case "Outset": return Outset;
+            case "CFE": return CFE;
+            case "Freehand": return Freehand;
+            case "Remotion": return Remotion;
+            case "THK": return THK;
+            case "Jam": return Jam;
+            case "Inc": return Inc;
             default: return Outset;
             //default: throw new Error(".TSX not found");
         }
@@ -23,10 +34,10 @@ export default function ProjectRow(props: Props): ReactElement {
 
     function buttonClicked(id: string): void {
         let isActive: boolean = (classList.includes("opening"));
-        const opened:boolean=(pageID===id||id==="");
+        const opened: boolean = (pageID === id || id === "");
         if (isActive) {
             if (opened) { //click to close
-                setClassList(classList.replace(" opening","")+" closing");
+                setClassList(classList.replace(" opening", "") + " closing");
                 setPageID("");
             }
             else { //switch content
@@ -35,23 +46,23 @@ export default function ProjectRow(props: Props): ReactElement {
             }
         }
         else {
-            setClassList(classList.replace(" closing","")+" opening");
+            setClassList(classList.replace(" closing", "") + " opening");
             setPageData(loadContent(id));
             setPageID(id);
         }
     }
 
-    let page: ReactElement = <div className={classList}><CloseButton id="" onclick={buttonClicked}/>{pageData}</div>;
+    let page: ReactElement = <div className={classList}><CloseButton id="" onclick={buttonClicked} />{pageData}</div>;
 
     return (
         <div className="column">
             <div className="row">
-                {props.children.map(function (element) {
+                {(Array.isArray(props.children)) ? props.children.map(function (element) {
                     return (cloneElement(
                         element,
                         { onclick: buttonClicked }
                     ));
-                })}
+                }) : props.children}
             </div>
             {page}
         </div>

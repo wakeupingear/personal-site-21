@@ -8,7 +8,7 @@ interface Props {
 
 }
 
-export default function Outset(props: Props): ReactElement {
+export default function Inc(props: Props): ReactElement {
     //https://github.com/xiaolin/react-image-gallery
     const images = [
         {
@@ -27,11 +27,11 @@ export default function Outset(props: Props): ReactElement {
 
 
     return (
-        <div className="pageHolder" id="OutsetPage">
-            <div className="pageTitle">Outset</div>
+        <div className="pageHolder" id="IncPage">
+            <div className="pageTitle">Inc Life</div>
             <div className="pageColumn">
                 <div className="pageRow">
-                    <div className="pageColumn" style={{ width: "50%" }}>
+                    <div className="pageColumn" style={{width:"50%"}}>
                         <div className="textBox">Use a GRAPPLING HOOK to explore a Platformer-RPG world.</div>
                         <div className="textBox">I've been working on Outset since August 2017 using Gamemaker Studio 2. Scheduled for release in 2022.</div>
                     </div>

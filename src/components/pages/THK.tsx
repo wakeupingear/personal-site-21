@@ -8,7 +8,7 @@ interface Props {
 
 }
 
-export default function Outset(props: Props): ReactElement {
+export default function THK(props: Props): ReactElement {
     //https://github.com/xiaolin/react-image-gallery
     const images = [
         {
@@ -27,19 +27,25 @@ export default function Outset(props: Props): ReactElement {
 
 
     return (
-        <div className="pageHolder" id="OutsetPage">
-            <div className="pageTitle">Outset</div>
+        <div className="pageHolder" id="THKPage">
+            <div className="pageTitle">Tiny Headed Game</div>
             <div className="pageColumn">
                 <div className="pageRow">
                     <div className="pageColumn" style={{ width: "50%" }}>
-                        <div className="textBox">Use a GRAPPLING HOOK to explore a Platformer-RPG world.</div>
-                        <div className="textBox">I've been working on Outset since August 2017 using Gamemaker Studio 2. Scheduled for release in 2022.</div>
+                        <div className="textBox">Explore the multiplayer open world of the <a href="https://tinyheadedkingdom.com/" target="_blank">Tiny Headed Kindom</a></div>
+                        <div className="textBox">I developed this game for THK's Holdiay 2020 Campaign.</div>
+                        <div className="textBox">
+                            <ul>Tech Stack
+                                <li>Game: Gamemaker Studio 2, JS</li>
+                                <li>Backend: NodeJS, AWS Elastic Beanstalk</li>
+                                <li>DB: Firebase Realtime Database</li>
+                            </ul>
+                        </div>
                     </div>
                     <ImageGallery items={images} />
                 </div>
                 <div className="pageRow">
-                    <LinkButton link="https://willfarhat.com/outset/">Learn More</LinkButton>
-                    <LinkButton link="https://store.steampowered.com/app/1256900/Outset/">Play Now!</LinkButton>
+                    <LinkButton link="http://thkgame.com">Play Now!</LinkButton>
                 </div>
             </div>
         </div>

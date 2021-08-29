@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 1.5vmin);
   font-family: 'Montserrat';
   width: 100%;
   height: max(100%, 100vh);
@@ -59,7 +59,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #e68dc4;
 }
 
 iframe {
@@ -88,12 +88,12 @@ iframe {
   color: white;
 }
 
-#resumeBox {
+.resumeBox {
   color: white;
 }
 
 #sidebar {
-  margin:1vw;
+  margin: 1vw;
   width: 12%;
   display: flex;
   flex-direction: column;
@@ -103,6 +103,38 @@ iframe {
   position: sticky;
   top: 0;
   align-self: flex-start;
+}
+
+#popup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 1vw;
+  border-style: none;
+}
+
+.popupTitle {
+  font-size: calc(10px + 4vmin);
+}
+
+#portrait {
+  width: 100%;
+}
+
+#popupText {
+  display: flex;
+  flex-direction: column;
+}
+
+#popupText>div {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+
+#popupText>div>a {
+  color: green;
 }
 
 .column {
@@ -139,6 +171,14 @@ iframe {
   height: 100%;
 }
 
+.previewDate {
+  position: absolute;
+  display: inline;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0.5vw;
+}
+
 .expandedPage {
   background-color: white;
   overflow: hidden;
@@ -166,23 +206,49 @@ iframe {
 @keyframes anim-open {
   from {
     height: 0%;
-    transform:scaleY(0);
+    transform: scaleY(0);
   }
   to {
     height: 100%;
-    transform:scaleY(1);
+    transform: scaleY(1);
   }
 }
 
 @keyframes anim-close {
   from {
     height: 100%;
-    transform:scaleY(1);
+    transform: scaleY(1);
   }
   to {
     height: 0%;
-    transform:scaleY(0);
+    transform: scaleY(0);
   }
+}
+
+.pageTitle {
+  padding-top: 1vw;
+  color: white;
+  font-size: calc(15px + 6vmin);
+}
+
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  width: 97.7%;
+  background-color: rgba(0, 99, 247, 0.8);
+  padding: 1vw;
+}
+
+#topBar>div::after {
+  content: "";
+}
+
+#filter {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  color: white;
 }
 
 #footer {
@@ -190,4 +256,8 @@ iframe {
   padding: 1vw;
   margin: 2vw;
   color: white;
+}
+
+#footer > div{
+  padding-bottom: 0.5vw;
 }
