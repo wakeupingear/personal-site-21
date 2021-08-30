@@ -1,4 +1,5 @@
-import React, { cloneElement, ReactElement, useState } from 'react'
+import React, { cloneElement, ReactElement, useState } from 'react';
+import {Collapse} from 'react-collapse';
 
 import CloseButton from './CloseButton';
 
@@ -11,6 +12,7 @@ import Jam from './pages/Jam'
 import Inc from './pages/Inc'
 
 interface Props {
+    rowID:string,
     children: ReactElement[] | ReactElement
 }
 
@@ -18,6 +20,21 @@ export default function ProjectRow(props: Props): ReactElement {
     const [classList, setClassList] = useState("expandedPage pageAnimation");
     const [pageData, setPageData] = useState(<div></div>);
     const [pageID, setPageID] = useState("");
+    const [isOpened,setOpen]=useState(false);
+    
+    //scroll to a clicked element
+    function scrollTo(element: string) {
+        const elementToScrollTo = document.getElementById(element);
+        if (elementToScrollTo!==null){
+            console.log(elementToScrollTo.clientHeight)
+            let y: number|undefined=elementToScrollTo.offsetTop+elementToScrollTo.clientHeight;
+            window.scrollTo({
+                    top:y,
+                    left:0,
+                    behavior: "smooth",
+            });
+        }
+    }
 
     function loadContent(id: string) {
         switch (id) {
@@ -37,26 +54,33 @@ export default function ProjectRow(props: Props): ReactElement {
         const opened: boolean = (pageID === id || id === "");
         if (isActive) {
             if (opened) { //click to close
+                setOpen(false);
                 setClassList(classList.replace(" opening", "") + " closing");
-                setPageID("");
+                //setPageID("");
+                //setPageData(<div></div>);
             }
             else { //switch content
+                setOpen(true);
                 setPageData(loadContent(id));
                 setPageID(id);
+                scrollTo(props.rowID);
             }
         }
         else {
+            setOpen(true);
             setClassList(classList.replace(" closing", "") + " opening");
             setPageData(loadContent(id));
             setPageID(id);
+            scrollTo(props.rowID);
         }
     }
 
-    let page: ReactElement = <div className={classList}><CloseButton id="" onclick={buttonClicked} />{pageData}</div>;
+    //let page: ReactElement = <Collapse isOpened={isOpened} className={classList}><CloseButton id="" onclick={buttonClicked} />{pageData}</Collapse>;
+    let page: ReactElement = <Collapse isOpened={isOpened} className={classList}>{pageData}</Collapse>;
 
     return (
         <div className="column">
-            <div className="row">
+            <div className="row" id={props.rowID}>
                 {(Array.isArray(props.children)) ? props.children.map(function (element) {
                     return (cloneElement(
                         element,

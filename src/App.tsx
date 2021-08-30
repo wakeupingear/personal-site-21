@@ -34,20 +34,20 @@ export default function App() {
         <div id="content">
           <div id="projectList">
             {/*<div id="topBar">
-              <div className="pageTitle">Projects</div>
+              <div className="pageTitle">Proonclickjects</div>
               <div id="filter">Filter</div>
             </div>
             */}
-            <ProjectRow>
+            <ProjectRow rowID="row1">
               <Preview id="Outset" icon={Outset} style={{ width: "63%" }} year="2022" />
               <Preview id="Inc" icon={Inc} style={{ width: "37%" }} year="2020" />
             </ProjectRow>
-            <ProjectRow>
+            <ProjectRow rowID="row2">
               <Preview id="CFE" icon={CFE} style={{ width: "30%", backgroundColor: "grey" }} year="2021" />
               <Preview id="THK" icon={THK} style={{ width: "50%" }} year="2020" />
               <Preview id="Freehand" icon={Freehand} style={{ width: "20%" }} year="2019" />
             </ProjectRow>
-            <ProjectRow>
+            <ProjectRow rowID="row3">
               <Preview id="Remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
               <Preview id="Jam" icon={Jam} style={{ width: "50%" }} year="2018-" />
             </ProjectRow>

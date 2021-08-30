@@ -28,7 +28,7 @@ export default function Sidebar() {
                     </div>
                 </div>
             </Popup><br></br>
-            <a className="resumeBox clickable" href="./resources/WillFarhatResume.docx" download>Resume</a>
+            <a className="resumeBox clickable" href="./resources/Will Farhat Resume.docx" download>Resume</a>
         </div>
     )
 }
