@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar'
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import { Provider, ClapButton } from "@lyket/react";
+import { useMediaQuery } from 'react-responsive';
 
 import Outset from "./assets/outsetBg.PNG"
 import Inc from "./assets/incLifeTitleSquare.png"
@@ -18,6 +19,12 @@ import Remotion from "./assets/remotionLogo.jpg"
 
 export default function App() {
   const { width, height } = useWindowSize();
+
+  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
 
   let confettiDiv: ReactElement = <div></div>;
   if (new Date().getDay() === 5) confettiDiv =
@@ -31,6 +38,7 @@ export default function App() {
       {confettiDiv}
       <header className="App-header">
         <iframe src="https://jcw87.github.io/c2-sans-fight/" title="Game"></iframe>
+        {isPortrait && <Sidebar />}
         <div id="content">
           <div id="projectList">
             {/*<div id="topBar">
@@ -52,7 +60,7 @@ export default function App() {
               <Preview id="Jam" icon={Jam} style={{ width: "50%" }} year="2018-" />
             </ProjectRow>
           </div>
-          <Sidebar />
+          {!isPortrait && <Sidebar />}
         </div>
         <div id="footer">
           <div>

@@ -1,7 +1,8 @@
 import React, { cloneElement, ReactElement, useState } from 'react';
-import {Collapse} from 'react-collapse';
+import { Collapse } from 'react-collapse';
+import { useMediaQuery } from 'react-responsive';
 
-import CloseButton from './CloseButton';
+//import CloseButton from './CloseButton';
 
 import Outset from './pages/Outset'
 import CFE from './pages/CFE'
@@ -12,7 +13,7 @@ import Jam from './pages/Jam'
 import Inc from './pages/Inc'
 
 interface Props {
-    rowID:string,
+    rowID: string,
     children: ReactElement[] | ReactElement
 }
 
@@ -20,18 +21,24 @@ export default function ProjectRow(props: Props): ReactElement {
     const [classList, setClassList] = useState("expandedPage pageAnimation");
     const [pageData, setPageData] = useState(<div></div>);
     const [pageID, setPageID] = useState("");
-    const [isOpened,setOpen]=useState(false);
-    
+    const [isOpened, setOpen] = useState(false);
+
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+    const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+
     //scroll to a clicked element
     function scrollTo(element: string) {
         const elementToScrollTo = document.getElementById(element);
-        if (elementToScrollTo!==null){
+        if (elementToScrollTo !== null && !isPortrait) {
             console.log(elementToScrollTo.clientHeight)
-            let y: number|undefined=elementToScrollTo.offsetTop+elementToScrollTo.clientHeight;
+            let y: number | undefined = elementToScrollTo.offsetTop + elementToScrollTo.clientHeight;
             window.scrollTo({
-                    top:y,
-                    left:0,
-                    behavior: "smooth",
+                top: y,
+                left: 0,
+                behavior: "smooth",
             });
         }
     }

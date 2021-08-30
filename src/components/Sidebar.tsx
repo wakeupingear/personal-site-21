@@ -1,13 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faLinkedin, faTwitter, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons'
-import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faLinkedin, faTwitter, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import { useMediaQuery } from 'react-responsive';
 
-import Photo from "../assets/portrait.PNG"
+import Photo from "../assets/portrait.PNG";
 
 export default function Sidebar() {
+    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+    let sidebarID:string="sidebarCol";
+    if (isPortrait) sidebarID="sidebarRow";
+
     return (
-        <div id="sidebar">
+        <div id={sidebarID}>
             <a className="socialLink" target="_blank" href="https://github.com/willf668"><FontAwesomeIcon icon={faGithub} /></a>
             <a className="socialLink" target="_blank" href="https://www.linkedin.com/in/will-farhat-12b89817b/"><FontAwesomeIcon icon={faLinkedin} /></a>
             <a className="socialLink" target="_blank" href="https://www.instagram.com/will_farhat/"><FontAwesomeIcon icon={faInstagram} /></a>
