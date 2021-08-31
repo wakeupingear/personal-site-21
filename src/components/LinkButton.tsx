@@ -11,7 +11,7 @@ export default function LinkButton(props: Props): ReactElement {
     }
 
     return (
-        <div className="linkButton clickable" onClick={onclick}>
+        <div className="linkButton" onClick={onclick}>
             <span>{props.children}</span>
         </div>
     )

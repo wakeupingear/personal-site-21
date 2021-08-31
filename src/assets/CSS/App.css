@@ -242,6 +242,10 @@ iframe {
   font-size: calc(15px + 6vmin);
 }
 
+.linkButton{
+  cursor: pointer;
+}
+
 #topBar {
   display: flex;
   justify-content: space-between;

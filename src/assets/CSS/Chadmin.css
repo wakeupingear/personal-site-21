@@ -1,6 +1,41 @@
+:root{
+    --cWN:3;
+    --cHN:4;
+}
+
 #Chadmin{
     background-color: blueviolet;
-    width: max(100vw,100%);
+    width: 100vw;
     height: 100vh;
     color: white;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    overflow: hidden;
+}
+
+#chadminTitle{
+    font-size: 10vw;
+}
+
+#chadminGrid{
+    display: grid;
+    text-align: center;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(var(--cWN),calc(90vw/var(--cWN)));
+    grid-template-rows: repeat(var(--cHN),calc(100vh/var(--cHN)));
+}
+
+.chadminCard{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    text-align: center;
+    justify-content: center;
+    border-radius: 2vw;
+}
+
+.chadminComplete{
+    background-color: green;
 }

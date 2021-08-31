@@ -1,6 +1,8 @@
 import React, { ReactElement, useState, useEffect } from 'react'
-import axios from 'axios'
-import { decode as base64_decode, encode as base64_encode } from 'base-64'
+
+import ChadminDashboard from './ChadminDashboard'
+
+import { setAPIFromData } from '../scripts/API'
 
 import '../assets/CSS/Chadmin.css'
 
@@ -9,33 +11,32 @@ interface Props {
 }
 
 export default function Chadmin({ }: Props): ReactElement {
-    const [ip, setIP] = useState();
-    const password = "";
-
-    const netObj = {
-        method: 'GET',
-        withCredentials: true,
-        headers: {
-            'Authorization': 'Basic' + base64_encode("admin:" + password)
+    const [signedIn, setSignIn] = useState(false);
+    setAPIFromData("ip", setSignIn);
+    const enterPassword = function () {
+        const password: string | null = prompt("Enter the password");
+        if (password !== null) {
+            localStorage.setItem("password", password);
+            setAPIFromData("ip", setSignIn);
         }
     }
-    const setFromAPIData = async function (path: string, resultFunc: Function): Promise<any> {
-        return new Promise(function (resolve) {
-            fetch("http://localhost:5000/api/" + path, netObj).then(response => response.json())
-                .then(function (data) {
-                    resultFunc(data.data);
-                    resolve(null);
-                });
-        });
-    }
 
-    setFromAPIData("ip", setIP);
+    let root = document.documentElement;
+    const setBoxSpacing= function () {
+        root.style.setProperty('--GWN', "" + Math.floor(window.innerWidth / 300));
+        root.style.setProperty('--GHN', "" + Math.floor(window.innerHeight / 300));
+        console.log(root.style.getPropertyValue("--GWN"))
+    }
+    setBoxSpacing();
+    window.onresize=setBoxSpacing;
+
+    const login = (
+        <div>
+            <div onClick={enterPassword}>Log In</div>
+        </div>
+    )
 
     return (
-        <div id="Chadmin">
-            <div id="ssh">
-                ssh pi@{ip}
-            </div>
-        </div>
+        (signedIn) ? <ChadminDashboard /> : login
     )
 }
