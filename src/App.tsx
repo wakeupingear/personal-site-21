@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import './App.css'
+import './assets/CSS/App.css'
 import Preview from './components/Preview'
 import ProjectRow from './components/ProjectRow'
 import Sidebar from './components/Sidebar'
