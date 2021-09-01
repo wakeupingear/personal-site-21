@@ -11,7 +11,7 @@ export async function setAPIFromData(path: string, resultFunc: Function): Promis
         }
     }
     return new Promise(function (resolve) {
-        fetch("http://localhost:5000/api/" + path, netObj).then(response => response.json())
+        fetch("http://api.willfarhat.com:5000/" + path, netObj).then(response => response.json())
             .then(function (data) {
                 resultFunc(data.data);
                 resolve(null);
