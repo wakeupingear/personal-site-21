@@ -1,0 +1,6 @@
+[submodule "src/outset-site"]
+	path = src/outset-site
+	url = https://github.com/willf668/outset-site.git
+[submodule "src/coding"]
+	path = src/coding
+	url = https://github.com/willf668/coding.git
