@@ -37,7 +37,7 @@ export default function App() {
     <div className="App">
       {confettiDiv}
       <header className="App-header">
-        <iframe id="headerGame" src="./personal-site-game/build/index.html" title="Game"></iframe>
+        <iframe id="headerGame" src={process.env.PUBLIC_URL+"/personal-site-game/build/index.html"} title="Game"></iframe>
         {isPortrait && <Sidebar />}
         <div id="content">
           <div id="projectList">
