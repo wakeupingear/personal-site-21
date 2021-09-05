@@ -4,3 +4,6 @@
 [submodule "src/coding"]
 	path = src/coding
 	url = https://github.com/willf668/coding.git
+[submodule "src/personal-site-game"]
+	path = src/personal-site-game
+	url = https://github.com/willf668/personal-site-game
