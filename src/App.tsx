@@ -6,8 +6,9 @@ import Sidebar from './components/Sidebar'
 
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
-import { Provider, ClapButton } from "@lyket/react";
-import { useMediaQuery } from 'react-responsive';
+import { Provider, ClapButton } from "@lyket/react"
+import { useMediaQuery } from 'react-responsive'
+import Iframe from 'react-iframe'
 
 import Outset from "./assets/outset/outsetBg.png"
 import Inc from "./assets/incLife/incLifeTitleSquare.png"
@@ -37,7 +38,7 @@ export default function App() {
     <div className="App">
       {confettiDiv}
       <header className="App-header">
-        <iframe id="headerGame" src={process.env.PUBLIC_URL+"/personal-site-game/build/index.html"} title="Game"></iframe>
+        <Iframe id="headerGame" url={process.env.PUBLIC_URL+"/personal-site-game/build/index.html"} title="Game"/>
         {isPortrait && <Sidebar />}
         <div id="content">
           <div id="projectList">
