@@ -15,6 +15,7 @@ import Inc from './pages/Inc'
 interface Props {
     rowID: string,
     children: ReactElement[] | ReactElement
+    bottom?: boolean
 }
 
 export default function ProjectRow(props: Props): ReactElement {
@@ -33,13 +34,14 @@ export default function ProjectRow(props: Props): ReactElement {
     function scrollTo(element: string) {
         const elementToScrollTo = document.getElementById(element);
         if (elementToScrollTo !== null && !isPortrait) {
-            console.log(elementToScrollTo.clientHeight)
-            let y: number | undefined = elementToScrollTo.offsetTop + elementToScrollTo.clientHeight;
-            window.scrollTo({
-                top: y,
-                left: 0,
-                behavior: "smooth",
-            });
+            setTimeout(() => {
+                let y: number | undefined = elementToScrollTo.offsetTop + elementToScrollTo.clientHeight;
+                window.scrollTo({
+                    top: y,
+                    left: 0,
+                    behavior: "smooth",
+                });
+            }, 80);
         }
     }
 
@@ -84,9 +86,11 @@ export default function ProjectRow(props: Props): ReactElement {
 
     //let page: ReactElement = <Collapse isOpened={isOpened} className={classList}><CloseButton id="" onclick={buttonClicked} />{pageData}</Collapse>;
     let page: ReactElement = <Collapse isOpened={isOpened} className={classList}>{pageData}</Collapse>;
+    let classes: string = "column";
+    //if (props.bottom !== undefined) classes+=" bottomRow";
 
     return (
-        <div className="column">
+        <div className={classes}>
             <div className="row" id={props.rowID}>
                 {(Array.isArray(props.children)) ? props.children.map(function (element) {
                     return (cloneElement(

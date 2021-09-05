@@ -1,31 +1,16 @@
 import React, { ReactElement } from 'react'
-import ImageGallery from 'react-image-gallery';
+import Slideshow from '../Slideshow'
 
 import './Page.css'
 import LinkButton from "../LinkButton"
+
+import i1 from "../../assets/freehand/hands.png"
 
 interface Props {
 
 }
 
 export default function Freehand(props: Props): ReactElement {
-    //https://github.com/xiaolin/react-image-gallery
-    const images = [
-        {
-            original: 'https://picsum.photos/id/1018/1000/600/',
-            thumbnail: 'https://picsum.photos/id/1018/250/150/',
-        },
-        {
-            original: 'https://picsum.photos/id/1015/1000/600/',
-            thumbnail: 'https://picsum.photos/id/1015/250/150/',
-        },
-        {
-            original: 'https://picsum.photos/id/1019/1000/600/',
-            thumbnail: 'https://picsum.photos/id/1019/250/150/',
-        },
-    ];
-
-
     return (
         <div className="pageHolder" id="FreehandPage">
             <div className="pageTitle">Freehand VR</div>
@@ -34,7 +19,7 @@ export default function Freehand(props: Props): ReactElement {
                     <div className="pageColumn" style={{ width: "50%" }}>
                         <div className="textBox">Markerless VR hand tracking system, created in 36 hours for <a href="https://www.hw.com/hackhw/index.html" target="_blank">HackHW Spring 2019</a>.</div>
                         <div className="textBox">
-                            <ul>Tech Stack
+                            <ul>Tech Stack -
                                 <li>ML: Python/Tensorflow, CUDA</li>
                                 <li>Game: C#/Unity, SteamVR</li>
                                 <li>Hardware: Windows MR Headsets</li>
@@ -48,7 +33,10 @@ export default function Freehand(props: Props): ReactElement {
                             </ul>
                         </div>
                     </div>
-                    <ImageGallery items={images} />
+                    <Slideshow >
+                        <img src={i1}></img>
+                        <iframe src="https://www.youtube.com/embed/ism-aDmwwI0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </Slideshow>
                 </div>
                 <div className="pageRow">
                     <LinkButton link="https://docs.google.com/presentation/d/1HrbUpzwM75nluZ9jZCHrM3QzYHynYORhWvgdSZP9I9E/edit?usp=sharing">Learn More</LinkButton>

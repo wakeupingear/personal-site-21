@@ -19,6 +19,8 @@
 .pageColumn {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     min-width: 30%;
     padding: 1vw 2vw 1vw 2vw;
 }
@@ -27,6 +29,7 @@
     display: flex;
     flex-direction: row;
     padding: 1vw;
+    width:100%;
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
@@ -39,6 +42,8 @@
     margin: 1vw;
     color: white;
     text-align: left;
+    box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1vw;
 }
 
 .linkButton {
@@ -53,6 +58,7 @@
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.1);
 }
 
 .linkButton span {
@@ -93,6 +99,15 @@
 
 #THKPage {
     background-color: rgb(253, 200, 47);
+}
+
+#thkAnimals{
+    width: 100%;
+    height:25vw;
+}
+
+#thkAnimals img{
+    height:100%;
 }
 
 #FreehandPage {

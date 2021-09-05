@@ -64,7 +64,13 @@ a {
 iframe {
   border-style: hidden;
   width: 100%;
+  height: 100%;
+}
+
+#headerGame {
+  width: 100%;
   height: 40vw;
+  box-shadow: 2px 2px 20px 13px rgba(0, 0, 0, 0.25);
 }
 
 .clickable, .socialLink {
@@ -83,17 +89,19 @@ iframe {
 }
 
 .socialLink {
-  font-size: calc(10px + 10vmin);
+  font-size: calc(10px + min(6vw,12vh));
+  margin:0;
   color: white;
 }
 
 .resumeBox {
   color: white;
+  margin-top: 1vw;
+  font-size: calc(3px + min(3vw,3vh));
 }
 
 #sidebarCol {
-  margin: 1vw;
-  width: 12%;
+  width: 23%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +109,12 @@ iframe {
   position: sticky;
   padding: 2vw 0 2vw 0;
   top: 0;
+  flex-wrap: wrap;
   align-self: flex-start;
+}
+
+#sidebarCol .socialLink{
+  margin: 0;
 }
 
 #sidebarRow {
@@ -120,14 +133,23 @@ iframe {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: black;
   color: white;
   padding: 1vw;
   border-style: none;
 }
 
+#popupText div::before {
+  content: "> ";
+}
+
 .popupTitle {
-  font-size: calc(10px + 4vmin);
+  font-size: calc(5px + 3vw);
+}
+
+.popupTitle::before {
+  content: "";
 }
 
 #portrait {
@@ -171,6 +193,11 @@ iframe {
   height: 0%;
   align-content: flex-start;
   flex-wrap: nowrap;
+  box-shadow: 2px 2px 20px 13px rgba(0, 0, 0, 0.25);
+}
+
+.bottomRow {
+  border-radius: 0 0 0 2vw;
 }
 
 .previewBox {
@@ -242,8 +269,12 @@ iframe {
   font-size: calc(15px + 6vmin);
 }
 
-.linkButton{
+.linkButton {
   cursor: pointer;
+}
+
+.slideshow * {
+  border-radius: 2vw;
 }
 
 #topBar {
@@ -271,8 +302,10 @@ iframe {
   padding: 1vw;
   margin: 2vw;
   color: white;
+  border-radius: 2vw;
+  box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.25);
 }
 
-#footer > div{
+#footer>div {
   padding-bottom: 0.5vw;
 }

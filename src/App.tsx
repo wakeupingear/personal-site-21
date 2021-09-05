@@ -9,13 +9,13 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import { Provider, ClapButton } from "@lyket/react";
 import { useMediaQuery } from 'react-responsive';
 
-import Outset from "./assets/outsetBg.PNG"
-import Inc from "./assets/incLifeTitleSquare.png"
-import THK from "./assets/thk.png"
-import Jam from "./assets/jamGames.png"
-import CFE from "./assets/cfe.png"
-import Freehand from "./assets/freehandVR.jpg"
-import Remotion from "./assets/remotionLogo.jpg"
+import Outset from "./assets/outset/outsetBg.png"
+import Inc from "./assets/incLife/incLifeTitleSquare.png"
+import THK from "./assets/thk/thk.png"
+import Jam from "./assets/jam/jamGames.png"
+import CFE from "./assets/cfe/cfe.png"
+import Freehand from "./assets/freehand/freehandVR.jpg"
+import Remotion from "./assets/remotion/remotionLogo.jpg"
 
 export default function App() {
   const { width, height } = useWindowSize();
@@ -37,7 +37,7 @@ export default function App() {
     <div className="App">
       {confettiDiv}
       <header className="App-header">
-        <iframe src="https://jcw87.github.io/c2-sans-fight/" title="Game"></iframe>
+        <iframe id="headerGame" src="https://jcw87.github.io/c2-sans-fight/" title="Game"></iframe>
         {isPortrait && <Sidebar />}
         <div id="content">
           <div id="projectList">
@@ -55,7 +55,7 @@ export default function App() {
               <Preview id="THK" icon={THK} style={{ width: "50%" }} year="2020" />
               <Preview id="Freehand" icon={Freehand} style={{ width: "20%" }} year="2019" />
             </ProjectRow>
-            <ProjectRow rowID="row3">
+            <ProjectRow rowID="row3" bottom={true}>
               <Preview id="Remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
               <Preview id="Jam" icon={Jam} style={{ width: "50%" }} year="2018-" />
             </ProjectRow>
