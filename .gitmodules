@@ -7,3 +7,9 @@
 [submodule "src/personal-site-game"]
 	path = src/personal-site-game
 	url = https://github.com/willf668/personal-site-game
+[submodule "public/personal-site-server"]
+	path = public/personal-site-server
+	url = https://github.com/willf668/personal-site-server
+[submodule "public/personal-site-game"]
+	path = public/personal-site-game
+	url = https://github.com/willf668/personal-site-game
