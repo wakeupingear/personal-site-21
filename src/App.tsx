@@ -21,6 +21,8 @@ import Remotion from "./assets/remotion/remotionLogo.jpg"
 export default function App() {
   const { width, height } = useWindowSize();
 
+  const isDev=(!process.env.NODE_ENV || process.env.NODE_ENV === 'development');
+
   const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
   const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
@@ -34,11 +36,14 @@ export default function App() {
         height={height} style={{ position: "absolute" }} />
     </div>;
 
+  let gameURL=process.env.PUBLIC_URL+"/personal-site-game/build/index.html";
+  if (!isDev) gameURL="https://api.willfarhat.com:5000/game";
+
   return (
     <div className="App">
       {confettiDiv}
       <header className="App-header">
-        <Iframe id="headerGame" url={process.env.PUBLIC_URL+"/personal-site-game/build/index.html"} title="Game"/>
+        <Iframe id="headerGame" url={gameURL} title="Game"/>
         {isPortrait && <Sidebar />}
         <div id="content">
           <div id="projectList">
