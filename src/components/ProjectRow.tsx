@@ -33,7 +33,7 @@ export default function ProjectRow(props: Props): ReactElement {
     //scroll to a clicked element
     function scrollTo(element: string) {
         const elementToScrollTo = document.getElementById(element);
-        if (elementToScrollTo !== null && !isPortrait) {
+        if (elementToScrollTo !== null && (!isPortrait||true)) {
             setTimeout(() => {
                 let y: number | undefined = elementToScrollTo.offsetTop + elementToScrollTo.clientHeight;
                 window.scrollTo({

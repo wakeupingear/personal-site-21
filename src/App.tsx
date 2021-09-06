@@ -36,6 +36,7 @@ export default function App() {
         height={height} style={{ position: "absolute" }} />
     </div>;
 
+  //let gameURL=process.env.PUBLIC_URL+"http://127.0.0.1:51264/index.html";
   let gameURL=process.env.PUBLIC_URL+"/personal-site-game/build/index.html";
   if (!isDev) gameURL="https://api.willfarhat.com:5000/game";
 
