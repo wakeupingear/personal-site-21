@@ -325,4 +325,7 @@ iframe {
 
 #footer>div {
   padding-bottom: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

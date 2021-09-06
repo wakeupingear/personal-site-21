@@ -71,15 +71,19 @@ export default function App() {
         </div>
         <div id="footer">
           <div>
-            Site programmed and hosted by Will Farhat - {(new Date().getFullYear())}
+            Site programmed and hosted by Will Farhat - {(new Date().getFullYear())}<br></br>
           </div>
-          <Provider apiKey="st_c11e1cd54478683640776c747b4f05">
-            <ClapButton
-              namespace="my-blog-post"
-              id="applause-react"
-              component={ClapButton.templates.Medium}
-            />
-          </Provider>
+          <div>
+            Say Hi!
+            <span>&nbsp;&nbsp;</span>
+            <Provider apiKey="st_c11e1cd54478683640776c747b4f05">
+              <ClapButton
+                namespace="my-blog-post"
+                id="applause-react"
+                component={ClapButton.templates.Medium}
+              />
+            </Provider>
+          </div>
         </div>
       </header>
     </div >
