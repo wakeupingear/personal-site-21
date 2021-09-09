@@ -54,7 +54,7 @@ export default function App() {
             </div>
             */}
             <ProjectRow rowID="row1">
-              <Preview id="Outset" icon={Outset} style={{ width: "63%" }} year="2022" />
+              <Preview id="Outset" icon={Outset} style={{ width: "63%" }} year="Releasing 2022" />
               <Preview id="Inc" icon={Inc} style={{ width: "37%" }} year="2020" />
             </ProjectRow>
             <ProjectRow rowID="row2">
@@ -64,7 +64,7 @@ export default function App() {
             </ProjectRow>
             <ProjectRow rowID="row3" bottom={true}>
               <Preview id="Remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
-              <Preview id="Jam" icon={Jam} style={{ width: "50%" }} year="2018-" />
+              <Preview id="Jam" icon={Jam} style={{ width: "50%" }} year="2018 - Present" />
             </ProjectRow>
           </div>
           {!isPortrait && <Sidebar />}
