@@ -1,7 +1,6 @@
 import React, { ReactElement, useState } from 'react'
 
 import Card from "./Card"
-import LinkButton from './LinkButton'
 
 import { setAPIFromData } from '../scripts/API'
 
@@ -10,30 +9,22 @@ interface Props {
 }
 
 export default function ChadminDashboard({ }: Props): ReactElement {
-    const [ip, setIP] = useState();
-    const [dailyArt, setArt] = useState();
     const [date, setDate] = useState(new Date());
-
-    setAPIFromData("ip", setIP);
 
     return (
         <div id="Chadmin">
             <div id="chadminTitle">{date.toLocaleDateString()}</div>
             <div id="chadminGrid">
-                <Card content="ssh" type={1}>
-                    <h1>Terminal</h1>
-                    <p>ssh pi@{ip}</p>
+                <Card content="ip" type={1}>
                 </Card>
                 <Card content="journal">
                     <h1>Journal</h1>
                 </Card>
-                <Card content="art">
-                    <h1>Daily Art</h1>
-                    <img id="dailyArt" src={dailyArt}></img>
-                    <LinkButton link="https://github.com/freehandvr">Upload</LinkButton>
+                <Card type={2} content="art" path='../../assets/upload.png'>
+                    <h1>Art</h1>
                 </Card>
-                <Card content="homework" type={2}>
-
+                <Card content="homework" link="https://myhomeworkapp.com/">
+                    <h1>Homework</h1>
                 </Card>
             </div>
         </div>

@@ -21,15 +21,6 @@ export default function Chadmin({ }: Props): ReactElement {
         }
     }
 
-    let root = document.documentElement;
-    const setBoxSpacing= function () {
-        root.style.setProperty('--GWN', "" + Math.floor(window.innerWidth / 300));
-        root.style.setProperty('--GHN', "" + Math.floor(window.innerHeight / 300));
-        console.log(root.style.getPropertyValue("--GWN"))
-    }
-    setBoxSpacing();
-    window.onresize=setBoxSpacing;
-
     const login = (
         <div>
             <div onClick={enterPassword}>Log In</div>
