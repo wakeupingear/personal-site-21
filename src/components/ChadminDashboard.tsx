@@ -26,6 +26,9 @@ export default function ChadminDashboard({ }: Props): ReactElement {
                 <Card content="homework" link="https://myhomeworkapp.com/">
                     <h1>Homework</h1>
                 </Card>
+                <Card type={3} content="files" path='../../assets/upload.png'>
+                    <h1>Drive</h1>
+                </Card>
             </div>
         </div>
     )

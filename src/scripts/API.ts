@@ -9,6 +9,7 @@ export async function setAPIFromData(path: string, resultFunc: Function, ): Prom
         withCredentials: true,
         headers: getAPIAuth()
     }
+    console.log(url+path)
     return new Promise(function (resolve) {
         fetch(url + path, netObj).then(response => response.json())
             .then(function (data) {

@@ -14,9 +14,7 @@ interface Props {
 }
 
 export default function Card(props: Props): ReactElement {
-    const [file, setFile] = useState<File>(); // storing the uploaded file    // storing the recived file from backend
     const [data, setData] = useState("");
-    const [progress, setProgess] = useState(""); // progess bar
     const el = useRef(null); // accesing input element
     const APIURL = getAPIUrl();
     let onClick = function () {
@@ -37,24 +35,14 @@ export default function Card(props: Props): ReactElement {
         }
         //if (!complete) setAPIFromData(props.content, setComplete);
     }
-    else if (props.type === 2) {
+    else if (props.type === 2 || props.type === 3) {
         const url = APIURL + "upload/" + props.content;
-        const handleChange = (e: any) => {
-            setProgess("");
-            const newFile = e.target.files[0]; // accessing file
-            console.log(newFile)
-            setFile(newFile); // storing file
-        }
 
-        const uploadFile = () => {
+        const uploadFile = (file: File) => {
             const formData = new FormData();
+            console.log(file)
             if (file !== undefined) formData.append('file', file, file.name.replace(/\s/g, '_')); // appending file
             axios.post(url, formData, {
-                onUploadProgress: (ProgressEvent) => {
-                    let progress = Math.round(
-                        ProgressEvent.loaded / ProgressEvent.total * 100) + '%';
-                    setProgess(progress);
-                },
                 headers: getAPIAuth()
             }).then(res => {
                 if (res.status === 200) {
@@ -63,23 +51,24 @@ export default function Card(props: Props): ReactElement {
             }).catch(err => console.log(err))
         }
 
+        const handleChange = (e: any) => {
+            const newFile = e.target.files[0]; // accessing file
+            //setFile(newFile); // storing file
+            uploadFile(newFile);
+        }
+
         body = <div>
-            {data!==""&&<img src={APIURL+data} className="dailyArt clickable"/>}
+            {data !== "" && <img src={APIURL + data} className="dailyArt" />}
             <div className="file-upload">
-                <input type="file" ref={el} onChange={handleChange} />                <div className="progessBar" style={{ width: progress }}>
-                    {progress}
-                </div>
-                <button onClick={uploadFile} className="upbutton">
-                    Upload
-                </button>
+                <input type="file" ref={el} onChange={handleChange} />
             </div>
         </div>
     }
 
-    if (props.type !== undefined && props.type !== 0) setAPIFromData(props.content, setData);
+    if (props.type !== undefined && props.type !== 0&&props.type!==3) setAPIFromData(props.content, setData);
 
     return (
-        <div onClick={onClick} className={"chadminCard " + classColor + (data !== "" ? "chadminComplete " : "")}>
+        <div onClick={onClick} className={"chadminCard " + classColor + (props.type === 3 || data !== "" ? "chadminComplete " : "")}>
             {props.children}
             {body}
         </div>

@@ -23,11 +23,11 @@ export default function App() {
 
   const isDev=(!process.env.NODE_ENV || process.env.NODE_ENV === 'development');
 
-  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  //const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+  //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
+  //const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
-  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+  //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
 
   let confettiDiv: ReactElement = <div></div>;
   if (new Date().getDay() === 5) confettiDiv =

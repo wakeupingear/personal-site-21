@@ -52,5 +52,8 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+}
 
+.dailyArt{
+    width: 100%;
 }
