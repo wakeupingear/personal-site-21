@@ -329,3 +329,31 @@ iframe {
   justify-content: center;
   align-items: center;
 }
+
+.title{
+  font-size: 10vw;
+  color: white;
+}
+
+#filePage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#fileHolder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fileLink{
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+}

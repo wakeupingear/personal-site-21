@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './index.css';
 import App from './App';
-import Chadmin from './components/Chadmin'
+import Chadmin from './components/Chadmin';
+import Files from './components/Files';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
     <Router >
       <Switch>
         <Route path="/chadmin" component={Chadmin} />
+        <Route path="/files" component={Files} />
         <Route component={App} />
       </Switch>
     </Router>
