@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useRef } from 'react'
+import React, { ReactElement, useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 
 import { setAPIFromData } from '../scripts/API'
@@ -65,8 +65,9 @@ export default function Card(props: Props): ReactElement {
         </div>
     }
 
-    if (props.type !== undefined && props.type !== 0&&props.type!==3) setAPIFromData(props.content, setData);
-
+    useEffect(() => {
+        if (props.type !== undefined && props.type !== 0&&props.type!==3) setAPIFromData(props.content, setData);
+    }, []);
     return (
         <div onClick={onClick} className={"chadminCard " + classColor + (props.type === 3 || data !== "" ? "chadminComplete " : "")}>
             {props.children}
