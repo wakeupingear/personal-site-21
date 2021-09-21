@@ -15,6 +15,7 @@ interface Props {
 
 export default function Card(props: Props): ReactElement {
     const [data, setData] = useState("");
+    const [fileURL, setFileURL] = useState("");
     const el = useRef(null); // accesing input element
     const APIURL = getAPIUrl();
     let onClick = function () {
@@ -29,8 +30,7 @@ export default function Card(props: Props): ReactElement {
     else if (props.type === 1) {
         if (props.content === "ip") {
             body = <div>
-                <h1>Terminal</h1>
-                <p>pi@{data}</p>
+                <p>ssh pi@{data}</p>
             </div>
         }
         //if (!complete) setAPIFromData(props.content, setComplete);
@@ -46,7 +46,8 @@ export default function Card(props: Props): ReactElement {
                 headers: getAPIAuth()
             }).then(res => {
                 if (res.status === 200) {
-                    setData(res.data);
+                    if (props.type === 2) setAPIFromData(props.content, setData);
+                    else setFileURL("https://willfarhat.com/files/" + res.data.data);
                 }
             }).catch(err => console.log(err))
         }
@@ -62,11 +63,12 @@ export default function Card(props: Props): ReactElement {
             <div className="file-upload">
                 <input type="file" ref={el} onChange={handleChange} />
             </div>
+            {fileURL !== "" && <a href={fileURL} target="_blank">Link to File</a>}
         </div>
     }
 
     useEffect(() => {
-        if (props.type !== undefined && props.type !== 0&&props.type!==3) setAPIFromData(props.content, setData);
+        if (props.type !== undefined && props.type !== 0 && props.type !== 3) setAPIFromData(props.content, setData);
     }, []);
     return (
         <div onClick={onClick} className={"chadminCard " + classColor + (props.type === 3 || data !== "" ? "chadminComplete " : "")}>

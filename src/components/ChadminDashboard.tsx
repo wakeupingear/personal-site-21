@@ -16,6 +16,7 @@ export default function ChadminDashboard({ }: Props): ReactElement {
             <div id="chadminTitle">{date.toLocaleDateString()}</div>
             <div id="chadminGrid">
                 <Card content="ip" type={1}>
+                    <h1>Terminal</h1>
                 </Card>
                 <Card content="journal">
                     <h1>Journal</h1>

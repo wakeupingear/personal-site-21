@@ -23,7 +23,16 @@ export default function Chadmin({ }: Props): ReactElement {
 
     const login = (
         <div>
-            <div onClick={enterPassword}>Log In</div>
+            <div id="loginPage">
+                <div id="loginButton" className="clickable" onClick={enterPassword}>
+                    <div>Log In</div>
+                </div>
+            </div>
+            <a href="https://willfarhat.com" id="loginFooter">
+                <div>
+                    If you are not Will, you have gotten hopelessly lost on this site. Click here.
+                </div>
+            </a>
         </div>
     )
 
