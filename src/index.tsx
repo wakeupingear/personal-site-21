@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+import reportWebVitals from './reportWebVitals';
+
 import './index.css';
 import App from './App';
 import Chadmin from './components/Chadmin';
 import Files from './components/Files';
-import reportWebVitals from './reportWebVitals';
+import OutsetPage from './components/OutsetPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +16,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/chadmin" component={Chadmin} />
         <Route path="/files" component={Files} />
+        <Route path="/outset" component={OutsetPage} />
         <Route component={App} />
       </Switch>
     </Router>

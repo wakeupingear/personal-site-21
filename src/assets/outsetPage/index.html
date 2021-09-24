@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+    <title>Outset - A Platformer-RPG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="discription" content="Use a GRAPPLING HOOK to explore and uncover the mysteries of a vast, interconnceted world."
+	/>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<link rel="icon" href="favicon.ico">
+	<style>
+
+		/* Position the image container (needed to position the left and right arrows) */
+		.container {
+		  position: relative;
+		}
+
+		/* Hide the images by default */
+		.mySlides {
+		  display: none;
+		}
+
+		/* Add a pointer when hovering over the thumbnail images */
+		.cursor {
+		  cursor: pointer;
+		}
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+		  cursor: pointer;
+		  position: absolute;
+		  top: 40%;
+		  width: auto;
+		  padding: 16px;
+		  margin-top: -50px;
+		  color: white;
+		  font-weight: bold;
+		  font-size: 20px;
+		  border-radius: 0 3px 3px 0;
+		  user-select: none;
+		  -webkit-user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+		  right: 0;
+		  border-radius: 3px 0 0 3px;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+		  background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		/* Container for image text */
+		.caption-container {
+		  text-align: center;
+		  background-color: #222;
+		  padding:0.5vw;
+		  color: white;
+		  font-family: Pixel;
+		  font-size:3vw;
+		}
+
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		/* Six columns side by side */
+		.column {
+		  float: left;
+		  width: 7.14285714%;
+		}
+
+		/* Add a transparency effect for thumnbail images */
+		.demo {
+		  opacity: 0.6;
+		}
+
+		.active,
+		.demo:hover {
+		  opacity: 1;
+		}
+		
+		@font-face { font-family: Pixel; src: url('m5x7.ttf'); } 
+		@font-face { font-family: Pixel; font-weight: bold; src: url('m5x7.ttf');}
+
+		img { 
+			image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+			image-rendering: -moz-crisp-edges;          /* Firefox                        */
+			image-rendering: -o-crisp-edges;            /* Opera                          */
+			image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+			image-rendering: pixelated; /* Chrome */
+			image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+			-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+		}
+		.html {
+			margin:0;
+			padding:0;
+			image-rendering: pixelated;
+		}
+
+		.textBox {
+			background-color:rgba(67,78,169, 0.85);
+			border-radius:1.5vw;
+			margin:0;
+			display:inline-block;
+			position:absolute;
+			width:70vw;
+			left:13vw;
+			padding:1.2vw;
+			color:white;
+			font-size:3vw;
+			top:0vw;
+		}
+		.innerBox {
+			border-style:solid;
+			border-width:1.2vw;
+			padding-right:2vw;
+			padding-left:2vw;
+			padding-top:1.5vw;
+			padding-bottom:1.5vw;
+			display:flex;
+			align-items:top;
+			font-family:"Pixel";
+		}
+
+		.mediaBox {
+			background-color:rgba(67,78,169, 0.85);
+			border-radius:1.5vw;
+			margin:0;
+			display:inline-block;
+			position:absolute;
+			width:87vw;
+			left:3vw;
+			padding:3vw;
+			color:white;
+			font-size:5vw;
+			top:0vw;
+			font-family:"Pixel";
+		}
+		#steam {
+			overflow: auto;
+			-moz-transform-origin: 0 0;
+			-o-transform-origin: 0 0;
+			-webkit-transform-origin: 0 0;
+		}
+	</style>
+<body style="background-color:black;">
+
+	<img src="gradient.png" style="display:inline-block;position:absolute;top:-90vw;left:0;width:100%;height:150vw;overflow:hidden;"/>
+
+	<div class="cloud">
+		<img src="outset/clouds/c1.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c2.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c3.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c4.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c5.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c6.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c7.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+		<img src="outset/clouds/c8.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+	</div>
+
+	<img id="trees" src="outset/trees/t1.png" style="display:inline-block;position:absolute;top:-7.4vw;left:0.8vw;width:100%;overflow:hidden;"/>
+	<img id="ground" src="outset/ground.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+	<img id="g2" src="outset/g2.png" style="display:inline-block;position:absolute;top:272vw;left:0;width:100%;overflow:hidden;"/>
+	<img id="g1" src="outset/g1.png" style="display:inline-block;position:absolute;top:-2vw;left:0;width:100%;overflow:hidden;"/>
+	
+	<img id="logo" src="outset/title.png" style="display:inline-block;position:absolute;top:7vw;left:0;width:100%;overflow:hidden;"/>
+
+<img id="angel" src="outset/angel.png" style="display:inline-block;position:absolute;top:441vw;left:42vw;width:16.6666666666666%;overflow:hidden;transform: rotate(180deg);"/>
+
+<div class="textBox" style="top:63vw;"><div class="innerBox" data-words=" Use a GRAPPLING HOOK to explore and uncover the mysteries of a nonlinear Platformer-RPG!" data-i="-1"></div></div>
+
+<div class="mediaBox" style="top:78vw;padding-top:1vw;padding-bottom:1vw;">
+	<center>Wishlist and Play the Demo on Steam!</center>
+	<iframe id="steam" src="https://store.steampowered.com/widget/1256900/" frameborder="0" style="width:590px;height:340px;float:right;position:absolute;left:50%;"></iframe>
+	<iframe src="https://www.youtube.com/embed/gfKm_Wfhamk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:40vw;height:22.5vw;padding-top:1vw;"></iframe>
+	<a href="https://store.steampowered.com/app/1256900/Outset/" target="_blank"><img id="mobileSteam" style="display:none;float-right;width:20vw;padding-left:10vw;-webkit-filter: invert(1);filter: invert(1);" src="steam/steamLogo.svg"></a>
+	</div>
+		<iframe id="vid2" src="https://www.youtube.com/embed/dw7icS0VMmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;position:absolute;width:26vw;height:14.625vw;top:84vw;left:59vw;"></iframe>
+
+<div class="textBox" style="top:111vw;"><div class="innerBox" data-words="
+	Outset is a Platformer-RPG being developed for PC, Mac, and Ubuntu. The game combines the action gameplay of a 2D platformer with the story and nonlinear structure of an RPG.
+" data-i="-1"></div></div>
+
+<div class="mediaBox" style="top:129.3vw;padding-top:1vw;padding-bottom:1vw;">
+	<div style="">
+		<div class="container" id="galleryContainer">
+			<!-- Data is inserted here by js -->
+		 </div>
+	</div>
+</div>
+
+<div id="support" class="textBox" style="top:188vw;"><div class="innerBox" data-words="
+	Armed with your GRAPPLING HOOK, a stylish tool lets you speed across gaps and barrel through the world, you'll encounter both fast-flowing platforming and nonlinear exploration. 
+" data-i="-1"></div></div>
+
+
+<svg style="position:absolute;left:24.4vw;top:214vw;" height="50vw"width="50vw">
+  <circle cx="25vw" cy="25vw" r="16vw" stroke="black" stroke-width="0" fill="#202020" />
+</svg>
+
+<a href="https://discord.gg/6jv2d3HeMn" style="position:absolute;left:37vw;top:228vw;text-decoration:none;font-family:Pixel;color:white;font-size:6vw;" target="_blank">
+	<img style="display:inline-block;width:24vw;" src="discord.png"/>
+</a>
+
+<!--<div class="textBox" style="top:278vw;text-align:center;"><div style="text-align:center;" class="innerBox" data-words="
+	The Story
+" data-i="-1"></div></div>-->
+
+
+
+<div style="position:absolute;top:457vw;left:75vw;"><a href="http://www.willfarhat.com"target="_blank" style="text-decoration:none;font-family:Pixel;font-size:3vw;color:white;">Created by Will Farhat</a></div>
+
+<div id="whiteFade" style="background:white;display:inline-block;position:fixed;width:100vw;left:0;top:0;height:100vh;"></div>
+<div id="blackFade" style="background:black;display:inline-block;position:fixed;width:100vw;left:0;top:0;height:100vh;"></div>
+<script>
+//slideshow assignment
+
+//fadein effect
+var doneFadingOut = false;
+setTimeout(function(){
+		$("#blackFade").fadeOut(800);
+		$("#whiteFade").fadeOut(1400, function(){
+			 doneFadingOut=true;
+			 checkScroll();
+		});
+	}, 1000);
+
+//tree animation
+const int1 = setInterval(function() {
+    if (document.getElementById("trees").src.substring(33)=="trees/t1.png") document.getElementById("trees").src="trees/t2.png";
+    else document.getElementById("trees").src="trees/t1.png";
+}, 1000);
+
+//cloud animation
+var cNum=0;
+const int2 = setInterval(function() {
+    var c=document.querySelectorAll(".cloud img");
+	if (cNum>7) cNum=cNum;
+	else if (cNum==-1) 
+	{
+		cNum++;
+		c[0].style.top="-1.7vw";
+	}
+	else
+	{
+		c[cNum].style.top="-1.7vw";
+		if (cNum==0) c[7].style.top="-2vw";
+		else c[cNum-1].style.top="-2vw";
+	}
+
+	cNum=(cNum+1)%15;
+}, 200);
+
+//angel movement
+var aCount=0;
+const int3 = setInterval(function() {
+    aCount=(aCount+0.025) %360;
+	document.getElementById("angel").style.top=(440+Math.sin(aCount)).toString()+"vw";
+}, 16);
+
+//text printout
+function typeWriter(box) {
+  var txt = box.getAttribute("data-words").toString();
+  var i = box.getAttribute("data-i").toString().match(/\d+/g);
+  if (i < txt.length) {
+	if (i<0) i=0;
+	box.innerHTML += txt.charAt(i);
+	i++;
+	box.setAttribute("data-i",i);
+    setTimeout(typeWriter, 8,box);
+  }
+}
+
+//scroll event setup
+window.onscroll = checkScroll;
+window.onresize = checkScroll;
+window.onload = setSteamSize;
+
+//scroll script to trigger text printout
+function checkScroll(){
+	setSteamSize();
+	if (doneFadingOut)
+	{
+		var boxes = document.getElementsByClassName("textBox");
+		for (var i = 0; i < boxes.length; i++) {
+		   var parent=(boxes.item(i));
+		   var y = parent.getBoundingClientRect().y.toString();
+		   if (y.indexOf(".")>-1) y=y.substr(0,y.indexOf("."));
+		   y=y.match(/\d+/g);
+		   if (y<window.screenY+window.innerHeight)
+		   {
+	   		   var box = parent.childNodes[0];
+			   if (box.getAttribute("data-i")=="-1") typeWriter(box);
+		   }
+		}
+	}
+}
+
+//sets mobile steam link
+var isMobile=( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) 
+if (isMobile){
+ document.getElementById("steam").style.display="none";
+ document.getElementById("mobileSteam").style.display="inline-block";
+}
+else document.getElementById("mobileSteam").style.top="-50vw;"
+
+//resizes steam widget
+setSteamSize()
+function setSteamSize(){
+	document.getElementById("steam").style.zoom=(window.innerWidth/958*0.7).toString();
+	document.getElementById("steam").style.paddingBottom="0px";
+	if (window.innerWidth>1800 && !isMobile){
+		document.getElementById("vid2").style.display="inline-block";
+		if (window.innerWidth<2000) document.getElementById("steam").style.paddingTop=(window.innerWidth/958*105).toString()+"px";
+		else document.getElementById("steam").style.paddingTop=(window.innerWidth/958*80).toString()+"px";
+	}
+	else{
+		document.getElementById("steam").style.paddingTop=(window.innerWidth/958*50).toString()+"px";
+		document.getElementById("vid2").style.display="none";
+	}
+}
+
+//assigns slideshow photos based on 'screenshots' folder
+$( document ).ready(function() {
+	$.ajax(
+    {
+        url: 'folder.php',
+        type:'POST',
+        dataType: 'text',
+        data: {test: '1'},
+        success: function(data)
+        {
+			data+="####";
+            photos=[];
+			var i=0;
+			while (data[i]!="#"&&i<data.length){
+				var end=i+1;
+				while (data.substring(end,end+4)!="/var"&&data.substring(end,end+4)!="####"){
+					end++;
+				}
+				photos.push(data.substring(i+21,end));
+				i=end;
+			}
+			var c=document.getElementById('galleryContainer')
+			for (var j=0;j<photos.length;j++) c.innerHTML+='<div class="mySlides"><img src="'+photos[j]+'" style="width:100%"></div>';
+			c.innerHTML+= '<a class="prev" onclick="plusSlides(-1)">&#10094;</a><a class="next" onclick="plusSlides(1)">&#10095;</a><div class="row">';
+			for (var f=0;f<photos.length;f++) c.innerHTML+='<div class="column" width="'+(100/(f.length-1)).toString()+'vw"><img src="'+photos[f]+'" class="demo cursor" style="width:100%" onclick="currentSlide('+(f+1).toString()+')"></div>';
+			c.innerHTML+='</div>';
+        }
+    });
+});
+
+//slideshow stuff
+var slideIndex = 1;
+setTimeout(function(){
+	slideIndex=1;
+	showSlides(slideIndex);
+},100);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  console.log(n);
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length-1) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length-1}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+//add onclick triggers to text boxes
+window.onload = function() {
+        var anchors = document.getElementsByClassName('innerBox');
+        for(var i = 0; i < anchors.length; i++) {
+            var anchor = anchors[i];
+            anchor.onclick = function() {
+                anchor.setAttribute("data-i",anchor.getAttribute("data-words").toString().length);
+				anchor.innerHTML=(anchor.getAttribute("data-words")).toString();
+            }
+        }
+    }
+</script>
+
+</html>
+
+<div class="mySlides">
+			  <img style="width:100%">
+		  </div>
