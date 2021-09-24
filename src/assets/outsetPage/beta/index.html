@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+    <title>Outset - Beta Resources</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/styles.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="../favicon.ico">
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	function openForm() {
+		document.getElementById("myNav").style.height = "100vh";
+	}
+	function closeForm() {
+		if (document.getElementById("emailSend").disabled==false) document.getElementById("myNav").style.height = "0vh";
+	}
+
+	function openKeyForm() {
+		document.getElementById("myNavKey").style.height = "100vh";
+	}
+	function closeKeyForm() {
+		if (document.getElementById("keySend").disabled==false) document.getElementById("myNavKey").style.height = "0vh";
+	}
+</script>
+<body>
+	<div style="text-align:center;font-size:8vw;">Outset Beta Resources</div>
+	
+	<br><br><br>
+	<div class="paragraph" style="width:98vw;">
+	<div class="subParagraph">
+		<p>Thank You for joining the Outset Beta!</p>
+		<p style="font-size:1.5vw;color:white;"><br>
+			As a tester for the Beta, you have access to in-development builds of Outset through the digital platform Steam<br>
+			The Beta version is incomplete in many areas, but it is constantly expanding<br>
+			To counter any bugs and glitches, the Beta versions have a few special tools (see below)<br>
+			These Beta keys won't be valid when the game releases, but you'll get a full key and a place in the credits as a thank you!<br>
+		</p>
+	</div></div>
+
+	<br><br>
+	<div id="claim" style="cursor:pointer;margin: auto;text-align:center;padding:4vw;background-color:MediumSeaGreen;font-size:3vw;width:50vw;">Claim your Beta Steam Key</div>
+	<br><br>
+	
+	<div class="paragraph" style="width:98vw;">
+	<div id="shortcuts" class="subParagraph">
+		<p>Beta Shortcuts</a></p>
+		<p style="font-size:1.5vw;color:white;"><br>
+			E or Right Thumbstick Pressed: Toggle noclip<br>
+			/ : Toggle command line<br>
+			Tab or Select Button: Open teleport menu<br>
+			V: Toggle collision<br>
+			C: Toggle mouse<br>
+			Q: Toggle advanced HUD<br>
+			Esc or Start Button: Open menu<br>
+		</p>
+	</div>
+	<br>
+	<div id="Progress" class="subParagraph">
+		<p>Changing and Resetting Progress</p>
+		<p style="font-size:1.5vw;color:white;"><br>
+		   To track your progress and choices, Outset uses a complicated system of variables and internal checks for progress.<br>
+		   While using the Beta, there is a high chance that bugs or testing will require you to alter that progress.<br><br><br>
+		</p>
+			<p style="font-size:2.1vw;">Changing Story Progress:</p>
+			<p style="font-size:1.5vw;color:white;"><br>
+			.      Use the EVENT command to input a new numeric value for events<br>
+			.      Similarly, use PATH1 (Titan Rock), PATH2 (Air/Breadnought/Deeptown), and PATH3 (Isla Noma Doma) to input new values for your progress in the different regions
+			</p><br>
+			<!--
+			<p style="font-size:2.1vw;">Changing Specific Items:</p>
+			<p style="font-size:1.5vw;color:white;"><br>
+			.      Use the ITEMREMOVE and ITEMADD commands to alter your inventory<br>
+			.      Item IDs for these commands can be found here
+			</p><br>
+
+			<p style="font-size:2.1vw;">Reset Specific Events:</p>
+			<p style="font-size:1.5vw;color:white;"><br>
+			.      Certain events are controlled by individual flags and are not reset by changin the EVENT variables<br>
+			.      Use the RESETEVENT command to reset these values
+			.      Event IDs for the specific events can be found here
+			</p><br>
+			-->
+			<p style="font-size:2.1vw;">Reset your Save File:<p>
+			<p style="font-size:1.5vw;color:white;"><br>
+			.      Use the RESET command to wipe your current save file<br>
+			.      This will empty your inventory and start you back at the point in the game where the EXPLORERS are leaving NOTDON
+			</p><br>
+	</div>
+	<br><br>
+	<div id="report" onclick="openForm()" style="cursor:pointer;margin: auto;text-align:center;padding:4vw;background-color:Tomato;font-size:3vw;width:50vw;">Submit a Bug Report</div>
+	<br><br>
+	
+	<div id="myNavKey" class="overlay">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeKeyForm()">&times;</a>
+	  <div class="overlay-content" style="font-size:4vw;">
+		<form id="msgFormKey" name="keyForm">
+		  <label for="fname">Your Email</label><br>
+		  <input type="email" name="email" style="font-size:3vw;"><br>
+		  <br>
+		  <input id="keySend" class="clickButton" type="submit" value="Get Key">
+		</form>
+	  </div>
+	</div>
+
+	<div id="myNav" class="overlay">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeForm()">&times;</a>
+	  <div class="overlay-content" style="font-size:4vw;">
+		<form id="msgForm" name="msForm">
+		  <label for="fname">Your Email</label><br>
+		  <input type="email" name="subject" style="font-size:3vw;"><br>
+		  <br>
+		  <label for="lname">Bug</label><br>
+		  <textarea type="text" name="body" rows="6" cols="30" style="font-size:2vw;"></textarea>
+		  <br>
+		  <input id="emailSend" class="clickButton" type="submit" value="Send">
+		</form>
+	  </div>
+	</div>
+
+</body>
+
+<script>
+
+	var claim=document.getElementById("claim");
+	var ip="";
+	$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+		ip=data.substring((data.indexOf("ip=")+3),data.indexOf("ts="));
+		//console.log(ip);
+		$(document).ready(function() {
+		$.ajax({
+			type: 'GET',
+			cache: false,
+			url: 'getKey.php', 
+			data:"ipVal="+ip,
+			success: function(msg) {
+				if (msg=="ok"){
+					claim.style.backgroundColor="Tomato";
+					claim.onclick=function(){
+						openKeyForm();
+					};
+				}
+				else {
+					if (msg.length==17) setKey(msg);
+					else {
+						claim.style.backgroundColor="#2E3192";
+						claim.innerHTML=msg;
+						resetBox();
+					}
+				}
+			}
+		});
+	})
+
+		$('form[name=keyForm]').submit(function(e){
+			e.preventDefault();
+			$( "#emailSend" ).prop( "disabled", true )
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: 'registerKey.php',
+				data: $(this).serialize()+"&ip="+ip, 
+				success: function(msg) {
+					$("#msgFormKey")[0].reset()
+					$( "#keySend" ).prop( "disabled", false )
+					setKey(msg);
+					closeKeyForm();
+				}
+			});
+		});     
+
+		$('form[name=msForm]').submit(function(e){
+			e.preventDefault();
+			$( "#emailSend" ).prop( "disabled", true )
+			$.ajax({
+				type: 'GET',
+				cache: false,
+				url: '/sendMail/mail2.php',
+				data: $(this).serialize(), 
+				success: function(msg) {
+					$("#msgForm")[0].reset()
+					$( "#emailSend" ).prop( "disabled", false )
+					closeForm();
+				}
+			});
+		});     
+	});       
+
+	function setKey(key) {
+		claim.style.backgroundColor="MediumSeaGreen";
+		claim.innerHTML="Your Steam Key:<br>"+key;
+		resetBox();
+	}
+	function resetBox() {
+		claim.onclick=function(){};
+		claim.style.cursor="auto";
+	}
+	function sendMessage(email, message) {
+		fetchAsync('/sendMail/mail2.php/?subject=Message from '+email+'&body='+message+'&header=Outset Bug Report&name=OutsetBugReport')
+		closeForm()
+	}
+</script>
+</html>

@@ -1,0 +1,60 @@
+#outsetSite {
+    width: 100vw;
+    height: auto;
+    overflow: scroll;
+}
+
+#outsetSite img {
+    image-rendering: optimizeSpeed;
+    /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;
+    /* Firefox                        */
+    image-rendering: -o-crisp-edges;
+    /* Opera                          */
+    image-rendering: -webkit-optimize-contrast;
+    /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;
+    /* Chrome */
+    image-rendering: optimize-contrast;
+    /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE8+                           */
+}
+
+#outsetBGLayer{
+    z-index: -100;
+}
+
+#outsetElementLayer{
+    position: absolute;
+    z-index: 100;
+}
+
+#outsetBG {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    padding: 0vw;
+}
+
+#outsetGradient {
+    position: absolute;
+    width: 100%;
+    top: -97vw;
+}
+
+.outsetSprite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.outsetText{
+    color: white;
+}
+
+#outsetFooterText{
+    bottom: 0;
+}
