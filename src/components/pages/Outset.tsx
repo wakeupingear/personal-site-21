@@ -4,21 +4,16 @@ import Slideshow from '../Slideshow'
 import './Page.css'
 import LinkButton from "../LinkButton"
 
-import i1 from "../../assets/outset/a.png"
-import i2 from "../../assets/outset/b.png"
-import i3 from "../../assets/outset/c.png"
-import i4 from "../../assets/outset/d.png"
-import i5 from "../../assets/outset/e.png"
-import i6 from "../../assets/outset/f.png"
-import i7 from "../../assets/outset/g.png"
-import i8 from "../../assets/outset/h.png"
-
 
 interface Props {
 
 }
 
 export default function Outset(props: Props): ReactElement {
+    const isDev = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development');
+    let fileURL = "http://localhost:2000/outset/";
+    if (!isDev) fileURL = "https://willfarhat.com/outset/";
+
     return (
         <div className="pageHolder" id="OutsetPage">
             <div className="pageTitle">Outset</div>
@@ -30,14 +25,14 @@ export default function Outset(props: Props): ReactElement {
                     </div>
                     <Slideshow >
                         <iframe src="https://www.youtube.com/embed/gfKm_Wfhamk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        <img src={i1}></img>
-                        <img src={i2}></img>
-                        <img src={i3}></img>
-                        <img src={i4}></img>
-                        <img src={i5}></img>
-                        <img src={i6}></img>
-                        <img src={i7}></img>
-                        <img src={i8}></img>
+                        <img src={fileURL+"screenshots/a.png"}></img>
+                        <img src={fileURL+"screenshots/b.png"}></img>
+                        <img src={fileURL+"screenshots/c.png"}></img>
+                        <img src={fileURL+"screenshots/d.png"}></img>
+                        <img src={fileURL+"screenshots/e.png"}></img>
+                        <img src={fileURL+"screenshots/f.png"}></img>
+                        <img src={fileURL+"screenshots/g.png"}></img>
+                        <img src={fileURL+"screenshots/h.png"}></img>
                     </Slideshow>
                 </div>
                 <div className="pageRow">

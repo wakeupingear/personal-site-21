@@ -1,7 +1,8 @@
 #outsetSite {
     width: 100vw;
-    height: auto;
+    height: 462vw;
     overflow: scroll;
+    background-color: black;
 }
 
 #outsetSite img {
@@ -21,18 +22,54 @@
     /* IE8+                           */
 }
 
-#outsetBGLayer{
+#outsetBGLayer {
     z-index: -100;
 }
 
-#outsetElementLayer{
+#outsetElementLayer {
+    display: flex;
+    justify-content: center;
+}
+
+.outsetGroup {
     position: absolute;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#outsetGroup1 {
+    top: 60vw;
+    height: 130vw;
+}
+
+#outsetGroup2 {
+    top: 290vw;
+    height: 130vw;
+}
+
+.outsetSlideshow {
+    width: min(90vw, 150vh);
+}
+
+#outsetCoreLink {
+    width: 50%;
+    position: absolute;
+    top: 215vw;
+}
+
+#outsetCoreLink img {
+    width: 100%;
+    filter: brightness(75%);
 }
 
 #outsetBG {
     display: flex;
     position: absolute;
+    top: -3vw;
     width: 100%;
     flex-direction: column;
     padding: 0vw;
@@ -46,15 +83,56 @@
 
 .outsetSprite {
     position: absolute;
-    top: 0;
+    top: -3vw;
     left: 0;
     width: 100%;
 }
 
-.outsetText{
-    color: white;
+.outsetTextbox {
+    background-color: rgba(47, 149, 233, 0.5);
+    display: flex;
+    border-radius: 2vw;
+    width: 80vw;
+    height: 20vw;
 }
 
-#outsetFooterText{
-    bottom: 0;
+.outsetTextbox img {
+    width: 20%;
+}
+
+.outsetTextbox div {
+    flex-basis: 100%;
+}
+
+.outsetTextBorder {
+    margin: 2vw;
+    padding: 1vw;
+    display: flex;
+    border-color: white;
+    border-style: solid;
+    border-width: 0.75vw;
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.outsetText {
+    margin-left: 2vw;
+    color: white;
+    font-size: 3vw;
+}
+
+#outsetSteam {
+    width: min(90vw, 150vh);
+    height: 200%;
+}
+
+#outsetFooterText {
+    position: absolute;
+    right: 6vw;
+    top: 455vw;
+}
+
+#outsetFooterText a {
+    color: white;
+    font-size: 2vw;
 }

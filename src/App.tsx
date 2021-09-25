@@ -10,7 +10,7 @@ import { Provider, ClapButton } from "@lyket/react"
 import { useMediaQuery } from 'react-responsive'
 import Iframe from 'react-iframe'
 
-import Outset from "./assets/outset/outsetBg.png"
+import Outset from "./assets/outsetPage/outsetBg.png"
 import Inc from "./assets/incLife/incLifeTitleSquare.png"
 import THK from "./assets/thk/thk.png"
 import Jam from "./assets/jam/jamGames.png"

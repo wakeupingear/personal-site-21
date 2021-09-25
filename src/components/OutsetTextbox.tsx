@@ -5,7 +5,9 @@ import useOnScreen from './hooks/UseOnScreen';
 
 interface Props {
     children: string,
-    profile?: string
+    profile?: string,
+    font?: string,
+    height?: string
 }
 
 export default function OutsetTextbox(props: Props): ReactElement {
@@ -13,22 +15,29 @@ export default function OutsetTextbox(props: Props): ReactElement {
     const isVisible = useOnScreen(ref, "0px");
     let opened = true;
 
-    const finalText = "<div class='outsetText'>"+props.children+"</div>";
+    let styleVar={};
+    if (props.height) styleVar["height"] = props.height;
+
+    let finalText = "<div class='outsetText' ";
+    if (props.font) finalText += "style='font-family:"+props.font+";'";
+    finalText += ">" + props.children + "</div>";
     return (
-        <div>
-            {props.profile ? <img src={props.profile} alt="profile" className="profile-image" /> : null}
-            {(opened || isVisible) && <Typewriter
-                options={{
-                    cursor: '',
-                    delay: 10,
-                    //strings: props.children.split(','),
-                    skipAddStyles: true,
-                }}
-                onInit={(typewriter) => {
-                    opened = true;
-                    typewriter.typeString(finalText).start();
-                }}
-            />}
+        <div className="outsetTextbox" style={styleVar}>
+            <div className="outsetTextBorder">
+                {props.profile ? <img src={props.profile} alt="profile" className="profile-image" /> : null}
+                {(opened || isVisible) && <Typewriter
+                    options={{
+                        cursor: '',
+                        delay: 10,
+                        //strings: props.children.split(','),
+                        skipAddStyles: true,
+                    }}
+                    onInit={(typewriter) => {
+                        opened = true;
+                        typewriter.typeString(finalText).start();
+                    }}
+                />}
+            </div>
         </div>
     )
 }
