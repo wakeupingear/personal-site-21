@@ -10,12 +10,16 @@ interface Props {
     height?: string
 }
 
+interface HeightStyle{
+    height?: string
+}
+
 export default function OutsetTextbox(props: Props): ReactElement {
     const ref = useRef<Element>();
     const isVisible = useOnScreen(ref, "0px");
     let opened = true;
 
-    let styleVar={};
+    let styleVar:HeightStyle={};
     if (props.height) styleVar["height"] = props.height;
 
     let finalText = "<div class='outsetText' ";

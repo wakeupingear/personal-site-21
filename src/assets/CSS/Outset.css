@@ -1,6 +1,6 @@
 #outsetSite {
     width: 100vw;
-    height: 462vw;
+    height: 468vw;
     overflow: scroll;
     background-color: black;
 }
@@ -129,7 +129,7 @@
 #outsetFooterText {
     position: absolute;
     right: 6vw;
-    top: 455vw;
+    top: 464vw;
 }
 
 #outsetFooterText a {

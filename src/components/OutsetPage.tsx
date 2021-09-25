@@ -34,7 +34,7 @@ export default function OutsetPage(props: Props): ReactElement {
             </div>
             <div id="outsetElementLayer">
                 <div id="outsetGroup1" className="outsetGroup">
-                    <OutsetTextbox profile={fileURL + "harold.png"}>
+                    <OutsetTextbox>
                         Use a GRAPPLING HOOK to explore and uncover the mysteries of a vast, interconnceted world.
                     </OutsetTextbox>
                     <div className="outsetSlideshow">
@@ -50,7 +50,7 @@ export default function OutsetPage(props: Props): ReactElement {
                             <img src={fileURL + "screenshots/h.png"}></img>
                         </Slideshow>
                     </div>
-                    <OutsetTextbox>
+                    <OutsetTextbox profile={fileURL + "harold.png"}>
                         Play Chapter 1 for free now!
                     </OutsetTextbox>
                     <div>
@@ -66,7 +66,7 @@ export default function OutsetPage(props: Props): ReactElement {
                     <OutsetTextbox>
                         The Story so far...
                     </OutsetTextbox>
-                    <OutsetTextbox profile={fileURL+"harold.png"}>
+                    <OutsetTextbox profile={fileURL + "harold.png"}>
                         JUST PLAY THE DEMO, COMRADE!
                     </OutsetTextbox>
                 </div>
