@@ -9,6 +9,7 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import { Provider, ClapButton } from "@lyket/react"
 import { useMediaQuery } from 'react-responsive'
 import Iframe from 'react-iframe'
+import { Helmet } from "react-helmet"
 
 import Outset from "./assets/outsetPage/outsetBg.png"
 import Inc from "./assets/incLife/incLifeTitleSquare.png"
@@ -21,7 +22,7 @@ import Remotion from "./assets/remotion/remotionLogo.jpg"
 export default function App() {
   const { width, height } = useWindowSize();
 
-  const isDev=(!process.env.NODE_ENV || process.env.NODE_ENV === 'development');
+  const isDev = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development');
 
   //const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
   //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
@@ -37,14 +38,22 @@ export default function App() {
     </div>;
 
   //let gameURL=process.env.PUBLIC_URL+"http://127.0.0.1:51264/index.html";
-  let gameURL=process.env.PUBLIC_URL+"/personal-site-game/build/index.html";
-  if (!isDev) gameURL="https://api.willfarhat.com:5000/game";
+  let gameURL = process.env.PUBLIC_URL + "/personal-site-game/build/index.html";
+  if (!isDev) gameURL = "https://api.willfarhat.com:5000/game";
 
   return (
     <div className="App">
+      <Helmet>
+        <title>Will Farhat</title>
+        <meta name="description" content="Will Farhat's personal website. Game Design, Software Engineering, Digital Art" />
+        <meta name="keywords" content="Will Farhat, Will Farhat's personal website, Game Design, Software Engineering, Digital Art" />
+        <meta name="author" content="Will Farhat" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+      </Helmet>
       {confettiDiv}
       <header className="App-header">
-        <Iframe id="headerGame" url={gameURL} title="Game"/>
+        <Iframe id="headerGame" url={gameURL} title="Game" />
         {isPortrait && <Sidebar />}
         <div id="content">
           <div id="projectList">
