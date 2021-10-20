@@ -12,7 +12,9 @@ interface Props {
 
 export default function Chadmin({ }: Props): ReactElement {
     const [signedIn, setSignIn] = useState(false);
-    setAPIFromData("ip", setSignIn);
+    useEffect(() => {
+        setAPIFromData("ip", setSignIn);
+    }, []);
     const enterPassword = function () {
         const password: string | null = prompt("Enter the password");
         if (password !== null) {

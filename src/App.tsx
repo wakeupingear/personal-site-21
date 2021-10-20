@@ -3,10 +3,10 @@ import './assets/CSS/App.css'
 import Preview from './components/Preview'
 import ProjectRow from './components/ProjectRow'
 import Sidebar from './components/Sidebar'
+import ClapButton from './components/ClapButton'
 
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
-import { Provider, ClapButton } from "@lyket/react"
 import { useMediaQuery } from 'react-responsive'
 import Iframe from 'react-iframe'
 import { Helmet } from "react-helmet"
@@ -85,13 +85,7 @@ export default function App() {
           <div>
             Say Hi!
             <span>&nbsp;&nbsp;</span>
-            <Provider apiKey="st_c11e1cd54478683640776c747b4f05">
-              <ClapButton
-                namespace="my-blog-post"
-                id="applause-react"
-                component={ClapButton.templates.Medium}
-              />
-            </Provider>
+            <ClapButton/>
           </div>
         </div>
       </header>
