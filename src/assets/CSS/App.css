@@ -397,8 +397,8 @@ iframe {
   left: 0;
   display: block;
   border-radius: 50%;
-  width: var(--btn-dimension) - 1px;
-  height: var(--btn-dimension) - 1px;
+  width: calc(var(--btn-dimension) - 1px);
+  height: calc(var(--btn-dimension) - 1px);
 }
 .clap:hover {
   cursor: pointer;
