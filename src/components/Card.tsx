@@ -33,6 +33,11 @@ export default function Card(props: Props): ReactElement {
                 <p>ssh pi@{data}</p>
             </div>
         }
+        else if (props.content === "github") {
+            body = <div>
+                <p>{data}</p>
+            </div>
+        }
         //if (!complete) setAPIFromData(props.content, setComplete);
     }
     else if (props.type === 2 || props.type === 3) {

@@ -18,6 +18,9 @@ export default function ChadminDashboard({ }: Props): ReactElement {
                 <Card content="ip" type={1}>
                     <h1>Terminal</h1>
                 </Card>
+                <Card content="github" type={1}>
+                    <h1>GitHub</h1>
+                </Card>
                 <Card content="journal">
                     <h1>Journal</h1>
                 </Card>
