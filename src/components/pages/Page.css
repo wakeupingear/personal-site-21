@@ -9,6 +9,7 @@
 }
 
 @import "~react-image-gallery/styles/css/image-gallery.css";
+
 .closeButton {
     font-size: calc(10px + 4vmin);
     position: absolute;
@@ -29,11 +30,11 @@
     display: flex;
     flex-direction: row;
     padding: 1vw;
-    width:100%;
+    width: 100%;
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
-  
+
 }
 
 .textBox {
@@ -58,7 +59,7 @@
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-    box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.3);
 }
 
 .linkButton span {
@@ -101,13 +102,13 @@
     background-color: rgb(253, 200, 47);
 }
 
-#thkAnimals{
+#thkAnimals {
     width: 100%;
-    height:25vw;
+    height: 25vw;
 }
 
-#thkAnimals img{
-    height:100%;
+#thkAnimals img {
+    height: 100%;
 }
 
 #FreehandPage {
@@ -124,4 +125,16 @@
 
 #JamPage {
     background-color: rgb(246, 147, 72);
+}
+
+#EmotivePage {
+    background-color: #362a56;
+}
+
+#ResearchPage {
+    background-color: #9F3434;
+}
+
+#YouTubePage {
+    background-color: #C9D5FD;
 }

@@ -37,12 +37,12 @@ export default function Sidebar() {
 
     return (
         <div id={sidebarID}>
-            <a className="socialLink" target="_blank" href="https://github.com/willf668"><FontAwesomeIcon icon={faGithub} /></a>
-            <a className="socialLink" target="_blank" href="https://www.linkedin.com/in/will-farhat-12b89817b/"><FontAwesomeIcon icon={faLinkedin} /></a>
-            <a className="socialLink" target="_blank" href="https://www.instagram.com/will_farhat/"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a className="socialLink" target="_blank" href="https://www.youtube.com/channel/UCImSybcXB8pCtulA-_T0WCw"><FontAwesomeIcon icon={faYoutube} /></a>
-            <a className="socialLink" target="_blank" href="https://twitter.com/will_farhat"><FontAwesomeIcon icon={faTwitter} /></a>
-            <a className="resumeBox clickable" href="https://github.com/willf668/resume/raw/main/WillFarhatResume.pdf" download>Resume</a>
+            <a className="socialLink" target="_blank" href="https://willfarhat.com/github"><FontAwesomeIcon icon={faGithub} /></a>
+            <a className="socialLink" target="_blank" href="https://willfarhat.com/github"><FontAwesomeIcon icon={faLinkedin} /></a>
+            <a className="socialLink" target="_blank" href="https://willfarhat.com/instagram"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a className="socialLink" target="_blank" href="https://www.youtube.com/channel/UCImSybcXB8pCtulA-_T0WCw?sub_confirmation=1"><FontAwesomeIcon icon={faYoutube} /></a>
+            <a className="socialLink" target="_blank" href="https://willfarhat.com/twitter"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a className="resumeBox clickable" href="https://willfarhat.com/resume" download>Resume</a>
         </div>
     )
 }

@@ -11,6 +11,9 @@ import Remotion from './pages/Remotion'
 import THK from './pages/THK'
 import Jam from './pages/Jam'
 import Inc from './pages/Inc'
+import Emotive from './pages/Emotive'
+import Research from './pages/Research'
+import YouTube from './pages/YouTube'
 
 interface Props {
     rowID: string,
@@ -53,6 +56,9 @@ export default function ProjectRow(props: Props): ReactElement {
             case "THK": return THK;
             case "Jam": return Jam;
             case "Inc": return Inc;
+            case "Emotive": return Emotive;
+            case "Research": return Research;
+            case "YouTube": return YouTube;
             default: return Outset;
             //default: throw new Error(".TSX not found");
         }

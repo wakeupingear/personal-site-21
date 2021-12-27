@@ -13,7 +13,6 @@ export default function Jam(props: Props): ReactElement {
         <div className="pageHolder" id="JamPage">
             <div className="pageTitle">Jam Games</div>
             <div className="pageColumn">
-                Games go here
             </div>
         </div>
     )

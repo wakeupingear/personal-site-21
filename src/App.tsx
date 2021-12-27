@@ -18,6 +18,9 @@ import Jam from "./assets/jam/jamGames.png"
 import CFE from "./assets/cfe/cfe.png"
 import Freehand from "./assets/freehand/freehandVR.jpg"
 import Remotion from "./assets/remotion/remotionLogo.jpg"
+import YouTube from "./assets/youtube/thumbnail.png"
+import Emotive from "./assets/emotive/emotive.png"
+import Research from "./assets/research/thumbnail.png"
 
 export default function App() {
   const { width, height } = useWindowSize();
@@ -64,16 +67,23 @@ export default function App() {
             */}
             <ProjectRow rowID="row1">
               <Preview id="Outset" icon={Outset} style={{ width: "63%" }} year="Releasing 2022" />
-              <Preview id="Inc" icon={Inc} style={{ width: "37%" }} year="2020" />
+              <Preview id="YouTube" icon={YouTube} style={{ width: "37%" }} />
             </ProjectRow>
             <ProjectRow rowID="row2">
-              <Preview id="CFE" icon={CFE} style={{ width: "30%", backgroundColor: "grey" }} year="2021" />
-              <Preview id="THK" icon={THK} style={{ width: "50%" }} year="2020" />
-              <Preview id="Freehand" icon={Freehand} style={{ width: "20%" }} year="2019" />
+              <Preview id="Inc" icon={Inc} style={{ width: "37%" }} year="2020" />
+              <Preview id="THK" icon={THK} style={{ width: "63%" }} year="2020" />
             </ProjectRow>
-            <ProjectRow rowID="row3" bottom={true}>
+            <ProjectRow rowID="row3">
+              <Preview id="Jam" icon={Jam} style={{ width: "50%" }} />
+              <Preview id="Research" icon={Research} style={{ width: "50%" }} />
+            </ProjectRow>
+            <ProjectRow rowID="row4">
+              <Preview id="CFE" icon={CFE} style={{ width: "30%", backgroundColor: "grey" }} year="2021" />
+              <Preview id="Emotive" icon={Emotive} style={{ width: "70%" }} year="2021" />
+            </ProjectRow>
+            <ProjectRow rowID="row5" bottom={true}>
               <Preview id="Remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
-              <Preview id="Jam" icon={Jam} style={{ width: "50%" }} year="2018 - Present" />
+              <Preview id="Freehand" icon={Freehand} style={{ width: "35%" }} year="2019" />
             </ProjectRow>
           </div>
           {!isPortrait && <Sidebar />}
@@ -85,7 +95,7 @@ export default function App() {
           <div>
             Say Hi!
             <span>&nbsp;&nbsp;</span>
-            <ClapButton/>
+            <ClapButton />
           </div>
         </div>
       </header>

@@ -2,23 +2,23 @@ interface PreviewBox {
     id: string,
     icon: string,
     style: React.CSSProperties,
-    year:string,
-    onclick?:Function
+    year?: string,
+    onclick?: Function
 }
 
 export default function Preivew(props: PreviewBox) {
 
-    function clicked(){
-        if (props.onclick!==undefined){
+    function clicked() {
+        if (props.onclick !== undefined) {
             props.onclick(props.id);
         }
     }
 
     return (
         <div className="previewBox clickable" onClick={clicked} style={props.style}>
-            <div className="previewDate">
+            {props.year !== undefined ? <div className="previewDate">
                 {props.year}
-            </div>
+            </div> : null}
             <img src={props.icon} alt={props.id}></img>
         </div>
     )
