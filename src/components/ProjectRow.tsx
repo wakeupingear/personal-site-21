@@ -14,11 +14,11 @@ import Inc from './pages/Inc'
 import Emotive from './pages/Emotive'
 import Research from './pages/Research'
 import YouTube from './pages/YouTube'
+import Will from './pages/Will'
 
 interface Props {
     rowID: string,
     children: ReactElement[] | ReactElement
-    bottom?: boolean
 }
 
 export default function ProjectRow(props: Props): ReactElement {
@@ -59,6 +59,7 @@ export default function ProjectRow(props: Props): ReactElement {
             case "Emotive": return Emotive;
             case "Research": return Research;
             case "YouTube": return YouTube;
+            case "Will": return Will;
             default: return Outset;
             //default: throw new Error(".TSX not found");
         }
@@ -93,17 +94,20 @@ export default function ProjectRow(props: Props): ReactElement {
     //let page: ReactElement = <Collapse isOpened={isOpened} className={classList}><CloseButton id="" onclick={buttonClicked} />{pageData}</Collapse>;
     let page: ReactElement = <Collapse isOpened={isOpened} className={classList}>{pageData}</Collapse>;
     let classes: string = "column";
-    //if (props.bottom !== undefined) classes+=" bottomRow";
+
+    function createPreview(element: ReactElement): ReactElement {
+        return cloneElement(
+            element,
+            { onclick: buttonClicked }
+        );
+    }
 
     return (
         <div className={classes}>
             <div className="row" id={props.rowID}>
                 {(Array.isArray(props.children)) ? props.children.map(function (element) {
-                    return (cloneElement(
-                        element,
-                        { onclick: buttonClicked }
-                    ));
-                }) : props.children}
+                    return createPreview(element);
+                }) : createPreview(props.children)}
             </div>
             {page}
         </div>

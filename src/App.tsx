@@ -1,9 +1,11 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState, useEffect } from 'react'
 import './assets/CSS/App.css'
 import Preview from './components/Preview'
 import ProjectRow from './components/ProjectRow'
 import Sidebar from './components/Sidebar'
 import ClapButton from './components/ClapButton'
+
+import { setAPIFromData } from 'scripts/API'
 
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
@@ -21,6 +23,7 @@ import Remotion from "./assets/remotion/remotionLogo.jpg"
 import YouTube from "./assets/youtube/thumbnail.png"
 import Emotive from "./assets/emotive/emotive.png"
 import Research from "./assets/research/thumbnail.png"
+import Ending from "./assets/will/ending.png"
 
 export default function App() {
   const { width, height } = useWindowSize();
@@ -31,6 +34,14 @@ export default function App() {
   //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
   //const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const [alive, setAlive] = useState(true);
+  useEffect(() => {
+    setAPIFromData("alive", setAlive);
+  }, []);
+  const [date, setDate] = useState("");
+  useEffect(() => {
+    setAPIFromData("date", setDate);
+  }, []);
   //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
 
   let confettiDiv: ReactElement = <div></div>;
@@ -81,10 +92,16 @@ export default function App() {
               <Preview id="CFE" icon={CFE} style={{ width: "30%", backgroundColor: "grey" }} year="2021" />
               <Preview id="Emotive" icon={Emotive} style={{ width: "70%" }} year="2021" />
             </ProjectRow>
-            <ProjectRow rowID="row5" bottom={true}>
+            <ProjectRow rowID="row5">
               <Preview id="Remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
               <Preview id="Freehand" icon={Freehand} style={{ width: "35%" }} year="2019" />
             </ProjectRow>
+            {!alive ?
+              <ProjectRow rowID="row6">
+                <Preview id="Will" icon={Ending} style={{ width: "100%" }} year={"2002 - " + date} />
+              </ProjectRow>
+              : null
+            }
           </div>
           {!isPortrait && <Sidebar />}
         </div>
