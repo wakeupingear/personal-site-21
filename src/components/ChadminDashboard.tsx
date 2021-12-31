@@ -1,6 +1,10 @@
 import React, { ReactElement, useState } from 'react'
 
-import Card from "./Card"
+import Card from "./chadminCards/Card"
+import CopyCard from './chadminCards/CopyCard';
+import LinkCard from './chadminCards/LinkCard';
+import DriveCard from './chadminCards/UploadCard';
+import ContactCard from './chadminCards/ContactCard';
 
 import { setAPIFromData } from '../scripts/API'
 
@@ -11,28 +15,25 @@ interface Props {
 export default function ChadminDashboard({ }: Props): ReactElement {
     const [date, setDate] = useState(new Date());
 
+    const secretContent = [
+        ["IP", "$","ip"],
+        ["GitHub Token", "$","github"],
+    ];
+
+    const commands = [
+        ["Router Login","ssh pi@$ -L 12345:192.168.1.1:80","ip"]
+    ]
+
     return (
         <div id="Chadmin">
             <div id="chadminTitle">{date.toLocaleDateString()}</div>
             <div id="chadminGrid">
-                <Card content="ip" type={1}>
-                    <h1>Terminal</h1>
-                </Card>
-                <Card content="github" type={1}>
-                    <h1>GitHub</h1>
-                </Card>
-                <Card content="journal">
-                    <h1>Journal</h1>
-                </Card>
-                <Card type={2} content="art" path='../../assets/upload.png'>
-                    <h1>Art</h1>
-                </Card>
-                <Card content="homework" link="https://myhomeworkapp.com/">
-                    <h1>Homework</h1>
-                </Card>
-                <Card type={3} content="files" path='../../assets/upload.png'>
-                    <h1>Drive</h1>
-                </Card>
+                <CopyCard classColor='chadminGreen' title="Secret Info" content={secretContent} />
+                <LinkCard classColor='chadminBlue' />
+                <CopyCard classColor='chadminGreen' title="Commands" content={commands} />
+                <DriveCard classColor='chadminBlue' path='files' title='Public Files' />
+                <DriveCard classColor='chadminBlue' path='chadmin/files' title='Private Files' />
+                <ContactCard classColor='chadminRed' />
             </div>
         </div>
     )

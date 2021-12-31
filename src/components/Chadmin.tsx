@@ -1,6 +1,7 @@
 import React, { ReactElement, useState, useEffect } from 'react'
 
 import ChadminDashboard from './ChadminDashboard'
+import Files from './Files'
 
 import { setAPIFromData } from '../scripts/API'
 
@@ -39,6 +40,6 @@ export default function Chadmin({ }: Props): ReactElement {
     )
 
     return (
-        (signedIn) ? <ChadminDashboard /> : login
+        (signedIn) ? ((!window.location.href.includes("files")) ? <ChadminDashboard /> : <Files isPrivate={true} />) : login
     )
 }

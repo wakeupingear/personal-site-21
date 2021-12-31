@@ -1,9 +1,9 @@
 import React, { ReactElement, useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 
-import { setAPIFromData } from '../scripts/API'
-import { getAPIAuth } from '../scripts/APIAuth'
-import { getAPIUrl } from '../scripts/APIUrl'
+import { setAPIFromData } from '../../scripts/API'
+import { getAPIAuth } from '../../scripts/APIAuth'
+import { getAPIUrl } from '../../scripts/APIUrl'
 
 interface Props {
     content: string,
