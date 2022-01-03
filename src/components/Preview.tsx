@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 interface PreviewBox {
     id: string,
     icon: string,
@@ -13,6 +15,14 @@ export default function Preivew(props: PreviewBox) {
             props.onclick(props.id);
         }
     }
+
+    useEffect(() => {
+
+        const urlPath = window.location.pathname.substring(1);
+        if (urlPath==props.id){
+            clicked();
+        }
+    }, []);
 
     return (
         <div className="previewBox clickable" onClick={clicked} style={props.style}>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<title>Uh oh...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    @font-face {
+        font-family: 'Comic Sans MS';
+        src: url("comic-sans-ms/comici.ttf");
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet, red);
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+
+    #bg {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 6rem;
+        text-align: center;
+        text-shadow: 2px 2px 8px red;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 2px 2px 8px purple;
+    }
+
+    #link {
+        position: relative;
+    }
+
+    .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+<html>
+
+<body>
+    <div id="bg">
+        <h1>That's a 404 error, buckaroo</h1>
+        <a id="link" href="https://willfarhat.com">
+            <img src="https://willfarhat.com/files/thanus.gif" alt="Thanus">
+            <p class="top-left">
+                Click here to return to the meme zone!
+            </p>
+        </a>
+        <h2>"'If you're seeing this, it means you're on the right website but you're on the wrong page.'</h2>
+        <h2>-Bernie Sanders"</h2>
+        <h2>- Michael Scott</h2>
+    </div>
+</body>
+
+</html>

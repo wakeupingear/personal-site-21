@@ -35,11 +35,9 @@ export default function App() {
   //const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   const [alive, setAlive] = useState(true);
-  useEffect(() => {
-    setAPIFromData("alive", setAlive);
-  }, []);
   const [date, setDate] = useState("");
   useEffect(() => {
+    setAPIFromData("alive", setAlive);
     setAPIFromData("date", setDate);
   }, []);
   //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
@@ -77,28 +75,28 @@ export default function App() {
             </div>
             */}
             <ProjectRow rowID="row1">
-              <Preview id="Outset" icon={Outset} style={{ width: "63%" }} year="Releasing 2022" />
-              <Preview id="YouTube" icon={YouTube} style={{ width: "37%" }} />
+              <Preview id="outset" icon={Outset} style={{ width: "63%" }} year="Releasing 2022" />
+              <Preview id="youtube" icon={YouTube} style={{ width: "37%" }} />
             </ProjectRow>
             <ProjectRow rowID="row2">
-              <Preview id="Inc" icon={Inc} style={{ width: "37%" }} year="2020" />
-              <Preview id="THK" icon={THK} style={{ width: "63%" }} year="2020" />
+              <Preview id="inc" icon={Inc} style={{ width: "37%" }} year="2020" />
+              <Preview id="thk" icon={THK} style={{ width: "63%" }} year="2020" />
             </ProjectRow>
             <ProjectRow rowID="row3">
-              <Preview id="Jam" icon={Jam} style={{ width: "50%" }} />
-              <Preview id="Research" icon={Research} style={{ width: "50%" }} />
+              <Preview id="jam" icon={Jam} style={{ width: "50%" }} />
+              <Preview id="research" icon={Research} style={{ width: "50%" }} />
             </ProjectRow>
             <ProjectRow rowID="row4">
-              <Preview id="CFE" icon={CFE} style={{ width: "30%", backgroundColor: "grey" }} year="2021" />
-              <Preview id="Emotive" icon={Emotive} style={{ width: "70%" }} year="2021" />
+              <Preview id="cfe" icon={CFE} style={{ width: "30%", backgroundColor: "grey" }} year="2021" />
+              <Preview id="emotive" icon={Emotive} style={{ width: "70%" }} year="2021" />
             </ProjectRow>
             <ProjectRow rowID="row5">
-              <Preview id="Remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
-              <Preview id="Freehand" icon={Freehand} style={{ width: "35%" }} year="2019" />
+              <Preview id="remotion" icon={Remotion} style={{ width: "65%" }} year="2019" />
+              <Preview id="freehand" icon={Freehand} style={{ width: "35%" }} year="2019" />
             </ProjectRow>
             {!alive ?
               <ProjectRow rowID="row6">
-                <Preview id="Will" icon={Ending} style={{ width: "100%" }} year={"2002 - " + date} />
+                <Preview id="will" icon={Ending} style={{ width: "100%" }} year={"2002 - " + date} />
               </ProjectRow>
               : null
             }

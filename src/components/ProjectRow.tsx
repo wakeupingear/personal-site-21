@@ -50,16 +50,16 @@ export default function ProjectRow(props: Props): ReactElement {
 
     function loadContent(id: string) {
         switch (id) {
-            case "CFE": return CFE;
-            case "Freehand": return Freehand;
-            case "Remotion": return Remotion;
-            case "THK": return THK;
-            case "Jam": return Jam;
-            case "Inc": return Inc;
-            case "Emotive": return Emotive;
-            case "Research": return Research;
-            case "YouTube": return YouTube;
-            case "Will": return Will;
+            case "cfe": return CFE;
+            case "freehand": return Freehand;
+            case "remotion": return Remotion;
+            case "thk": return THK;
+            case "jam": return Jam;
+            case "inc": return Inc;
+            case "emotive": return Emotive;
+            case "research": return Research;
+            case "youtube": return YouTube;
+            case "will": return Will;
             default: return Outset;
             //default: throw new Error(".TSX not found");
         }
