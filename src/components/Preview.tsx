@@ -17,9 +17,8 @@ export default function Preivew(props: PreviewBox) {
     }
 
     useEffect(() => {
-
         const urlPath = window.location.pathname.substring(1);
-        if (urlPath==props.id){
+        if (urlPath == props.id) {
             clicked();
         }
     }, []);

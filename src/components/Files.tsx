@@ -25,7 +25,10 @@ export default function Files(props: Props): ReactElement {
                     .createObjectURL(new Blob([response.data]));
                 const link = document.createElement('a');
                 link.href = url;
-                link.setAttribute('download', 'image.jpg');
+                while (path.includes("/")) {
+                    path = path.substring(path.indexOf("/") + 1);
+                }
+                link.setAttribute('download', path);
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);

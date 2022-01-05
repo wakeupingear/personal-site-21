@@ -1,4 +1,5 @@
 import React, { ReactElement, useState, useEffect, useRef } from 'react'
+import Contact from '../Contact'
 
 import { setAPIFromData } from '../../scripts/API'
 import { getAPIAuth } from '../../scripts/APIAuth'
@@ -13,9 +14,11 @@ interface Props {
 
 interface Contact {
     name: string,
-    email?: string[],
-    social?: string[],
-    phone?: string[],
+    emails?: string[],
+    socials?: string[],
+    numbers?: string[],
+    aliases?: string[],
+    addresses: string[],
 }
 
 export default function ContactCard(props: Props): ReactElement {
@@ -32,13 +35,15 @@ export default function ContactCard(props: Props): ReactElement {
                         setAPIFromData("contacts/search/" + e.currentTarget.value.toLowerCase().trim(), setData);
                     }} />
             </TextField>
-            {data.map((user: Contact) => {
-                return (
-                    <div>
-                        {user.name}
-                    </div>
-                )
-            })}
+            {(data.length === 0) ? null :
+                <div id="contactList">
+                    {data.map((user: Contact) => {
+                        return (
+                            <Contact {...user} />
+                        )
+                    })}
+                </div>
+            }
         </div>
     )
 }
