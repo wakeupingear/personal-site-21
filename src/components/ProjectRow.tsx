@@ -16,6 +16,8 @@ import Research from './pages/Research'
 import YouTube from './pages/YouTube'
 import Will from './pages/Will'
 
+import { ScrollTo } from '../scripts/ScrollTo'
+
 interface Props {
     rowID: string,
     children: ReactElement[] | ReactElement
@@ -32,21 +34,6 @@ export default function ProjectRow(props: Props): ReactElement {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
     const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
-
-    //scroll to a clicked element
-    function scrollTo(element: string) {
-        const elementToScrollTo = document.getElementById(element);
-        if (elementToScrollTo !== null && (!isPortrait||true)) {
-            setTimeout(() => {
-                let y: number | undefined = elementToScrollTo.offsetTop + elementToScrollTo.clientHeight;
-                window.scrollTo({
-                    top: y,
-                    left: 0,
-                    behavior: "smooth",
-                });
-            }, 80);
-        }
-    }
 
     function loadContent(id: string) {
         switch (id) {
@@ -79,7 +66,7 @@ export default function ProjectRow(props: Props): ReactElement {
                 setOpen(true);
                 setPageData(loadContent(id));
                 setPageID(id);
-                scrollTo(props.rowID);
+                ScrollTo(props.rowID, isPortrait);
             }
         }
         else {
@@ -87,7 +74,7 @@ export default function ProjectRow(props: Props): ReactElement {
             setClassList(classList.replace(" closing", "") + " opening");
             setPageData(loadContent(id));
             setPageID(id);
-            scrollTo(props.rowID);
+            ScrollTo(props.rowID, isPortrait);
         }
     }
 

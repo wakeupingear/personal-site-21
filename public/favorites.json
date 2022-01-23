@@ -1,0 +1,42 @@
+ {
+     "about":[
+         "This is a collection of things that matter to me.",
+         "The first item of each I'd consider my favorite, but the rest is left unordered.",
+     ],
+     "Books":[
+         "The Martian Chronicles",
+         "The Moon is a Harsh Mistress",
+         "The Chronicles of Narnia"
+     ],
+     "Movies":[
+         "Whiplash",
+         "Y Tu Mamá Tambien",
+         "Wall-E",
+         "Knives Out",
+         "The Grand Budapest Hotel"
+     ],
+     "Albums":[
+         "Flower Boy",
+         "Panic",
+         "Late Registration",
+         "Malibu",
+         "folklore",
+         "Trench"
+     ],
+     "Songs":[
+         "Lost in the World",
+         "Plume",
+         "Paranoid",
+         "I THINK",
+         "Green Light",
+         "august"
+     ],
+     "Games":[
+        "Breath of the Wild",
+        "Super Paper Mario",
+        "Cave Story",
+        "Undertale",
+        "Paper Mario: The Thousand Year Door",
+        "Celeste"
+     ]
+ }

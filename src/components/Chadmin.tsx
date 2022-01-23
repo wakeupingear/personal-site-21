@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect } from 'react'
+import { ReactElement, useState, useEffect } from 'react'
 
 import ChadminDashboard from './ChadminDashboard'
 import Files from './Files'
@@ -14,13 +14,13 @@ interface Props {
 export default function Chadmin({ }: Props): ReactElement {
     const [signedIn, setSignIn] = useState(false);
     useEffect(() => {
-        setAPIFromData("ip", setSignIn);
+        setAPIFromData("secrets/ip", setSignIn);
     }, []);
     const enterPassword = function () {
         const password: string | null = prompt("Enter the password");
         if (password !== null) {
             localStorage.setItem("password", password);
-            setAPIFromData("ip", setSignIn);
+            setAPIFromData("secrets/ip", setSignIn);
         }
     }
 

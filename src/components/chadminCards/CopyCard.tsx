@@ -35,7 +35,7 @@ export default function CopyCard(props: Props): ReactElement {
             completedFields[element[0]] = i;
             if (element.length === 2) addProperty(element[2], element[1]);
             else for (let j = 2; j < element.length; j++) {
-                setAPIFromData(element[j], addProperty, element[0]);
+                setAPIFromData("secrets/"+element[j], addProperty, element[0]);
             }
         }
     }, []);

@@ -1,12 +1,10 @@
-import React, { ReactElement, useState } from 'react'
+import { ReactElement, useState } from 'react'
 
-import Card from "./chadminCards/Card"
 import CopyCard from './chadminCards/CopyCard';
 import LinkCard from './chadminCards/LinkCard';
-import DriveCard from './chadminCards/UploadCard';
+import UploadCard from './chadminCards/UploadCard';
+import DailyArt from './chadminCards/DailyArt';
 import ContactCard from './chadminCards/ContactCard';
-
-import { setAPIFromData } from '../scripts/API'
 
 interface Props {
 
@@ -18,6 +16,7 @@ export default function ChadminDashboard({ }: Props): ReactElement {
     const secretContent = [
         ["IP", "$","ip"],
         ["GitHub Token", "$","github"],
+        ["USC ID", "$","uscID"],
     ];
 
     const commands = [
@@ -31,8 +30,9 @@ export default function ChadminDashboard({ }: Props): ReactElement {
                 <CopyCard classColor='chadminGreen' title="Secret Info" content={secretContent} />
                 <LinkCard classColor='chadminBlue' />
                 <CopyCard classColor='chadminGreen' title="Commands" content={commands} />
-                <DriveCard classColor='chadminBlue' path='files' title='Public Files' />
-                <DriveCard classColor='chadminBlue' path='chadmin/files' title='Private Files' />
+                <UploadCard classColor='chadminBlue' path='files' title='Public Files' />
+                <UploadCard classColor='chadminBlue' path='chadmin/files' title='Private Files' />
+                <DailyArt classColor='chadminOrange'/>
                 <ContactCard classColor='chadminRed' />
             </div>
         </div>

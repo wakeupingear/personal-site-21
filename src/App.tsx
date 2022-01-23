@@ -4,6 +4,7 @@ import Preview from './components/Preview'
 import ProjectRow from './components/ProjectRow'
 import Sidebar from './components/Sidebar'
 import ClapButton from './components/ClapButton'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 import { setAPIFromData } from 'scripts/API'
 

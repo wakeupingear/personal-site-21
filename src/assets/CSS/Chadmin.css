@@ -73,6 +73,10 @@
     background-color: rgba(0, 0, 0, 0.25);
     padding: 0.5vw;
     border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .chadminCardTitle {
@@ -83,6 +87,10 @@
 
 .chadminBlue {
     background-color: rgb(79, 79, 202);
+}
+
+.chadminRed {
+    background-color: rgb(224, 67, 67);
 }
 
 .chadminLink:hover {
@@ -100,6 +108,32 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+#artSubmit {
+    --dark: #3C3C3B;
+    --light: #EBEBD3;
+    --bg: #1446A0;
+    --bg-dark: #143677;
+    --bright: #F5D547;
+    --alt: #DB3069;
+    --confirm: #35af59;
+    --confirmDark: #32914e;
+    background-color: var(--alt);
+    padding: 0 1rem 0 1rem;
+    margin: 2rem;
+    box-shadow: 0 0 0.5rem 0.5rem var(--bg-dark);
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, var(--confirmDark), var(--confirm));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s, color .5s;
+}
+
+#artSubmit:hover {
+    opacity: 0 !important;
+    background-size: 100% 100% !important;
 }
 
 .dailyArt {
@@ -128,17 +162,17 @@
     padding: 0;
 }
 
-.contactCategory{
+.contactCategory {
     display: flex;
     flex-direction: column;
 }
 
-.contactTitle{
+.contactTitle {
     margin: 0.5vw !important;
     padding: 0 !important;
 }
 
-.contactCard{
+.contactCard {
     background-color: rgb(79, 79, 202);
     border-radius: 1vw;
     margin: 1vw;
@@ -146,15 +180,27 @@
     box-shadow: 2px 2px 20px 13px rgba(0, 0, 0, 0.25);
 }
 
-#fileHolder{
+#fileHolder {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 2vw;
 }
 
-.fileLink{
+.fileLink {
     margin: 1vw;
     background-color: rgba(255, 255, 255, 0.05);
     box-shadow: 2px 2px 20px 13px rgba(255, 255, 255, 0.05);
+}
+
+.loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading > * {
+    color: white;
+    stroke: white;
+    fill: white !important;
 }
