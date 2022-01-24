@@ -17,6 +17,7 @@ export default function ChadminDashboard({ }: Props): ReactElement {
         ["IP", "$","ip"],
         ["GitHub Token", "$","github"],
         ["USC ID", "$","uscID"],
+        ["SSN", "$","ssn"],
     ];
 
     const commands = [
