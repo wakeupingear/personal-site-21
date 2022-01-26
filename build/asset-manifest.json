@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.2f1dd33c.chunk.css",
+    "main.css": "/static/css/main.1e67fba5.chunk.css",
     "main.js": "/static/js/main.6b237048.chunk.js",
     "main.js.map": "/static/js/main.6b237048.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a2101d16.js",
@@ -12,7 +12,7 @@
     "static/js/3.5191c879.chunk.js.map": "/static/js/3.5191c879.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.552c81ed.chunk.css.map": "/static/css/2.552c81ed.chunk.css.map",
-    "static/css/main.2f1dd33c.chunk.css.map": "/static/css/main.2f1dd33c.chunk.css.map",
+    "static/css/main.1e67fba5.chunk.css.map": "/static/css/main.1e67fba5.chunk.css.map",
     "static/js/2.73df3aca.chunk.js.LICENSE.txt": "/static/js/2.73df3aca.chunk.js.LICENSE.txt",
     "static/media/3person.465fd22f.png": "/static/media/3person.465fd22f.png",
     "static/media/THK Client 2.3 - GameMaker Studio 2 12_15_2020 10_19_38 PM.0352de80.png": "/static/media/THK Client 2.3 - GameMaker Studio 2 12_15_2020 10_19_38 PM.0352de80.png",
@@ -57,7 +57,7 @@
     "static/js/runtime-main.a2101d16.js",
     "static/css/2.552c81ed.chunk.css",
     "static/js/2.73df3aca.chunk.js",
-    "static/css/main.2f1dd33c.chunk.css",
+    "static/css/main.1e67fba5.chunk.css",
     "static/js/main.6b237048.chunk.js"
   ]
 }

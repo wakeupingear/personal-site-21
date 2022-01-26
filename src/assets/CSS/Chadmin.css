@@ -111,20 +111,12 @@
 }
 
 #artSubmit {
-    --dark: #3C3C3B;
-    --light: #EBEBD3;
-    --bg: #1446A0;
-    --bg-dark: #143677;
-    --bright: #F5D547;
-    --alt: #DB3069;
-    --confirm: #35af59;
-    --confirmDark: #32914e;
-    background-color: var(--alt);
+    background-color: #DB3069;
     padding: 0 1rem 0 1rem;
     margin: 2rem;
-    box-shadow: 0 0 0.5rem 0.5rem var(--bg-dark);
+    box-shadow: 0 0 0.5rem 0.5rem #773014;
     border-radius: 1rem;
-    background-image: linear-gradient(to right, var(--confirmDark), var(--confirm));
+    background-image: linear-gradient(to right, #32914e, #35af59);
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0% 100%;
@@ -132,7 +124,7 @@
 }
 
 #artSubmit:hover {
-    opacity: 0 !important;
+    opacity: 1 !important;
     background-size: 100% 100% !important;
 }
 
