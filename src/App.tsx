@@ -13,6 +13,7 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import { useMediaQuery } from 'react-responsive'
 import Iframe from 'react-iframe'
 import { Helmet } from "react-helmet"
+import "@fontsource/poppins";
 
 import Outset from "./assets/outsetPage/outsetBg.png"
 import Inc from "./assets/incLife/incLifeTitleSquare.png"

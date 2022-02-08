@@ -27,8 +27,8 @@ export default function Freehand(props: Props): ReactElement {
             collaborators={[
                 ["Will Liu", "Hand Tracking","https://github.com/BitsByWill"],
                 ["Lukas Seklir", "ML Training", "https://github.com/lukiebukie"],
-                ["Yvette Copeland", "Positional Tracking", ],
-                ["Will Farhat", "Unity Development", "https://github.com/yvettejade"]
+                ["Yvette Copeland", "Positional Tracking", "https://github.com/yvettejade"],
+                ["Will Farhat", "Unity Development"]
             ]}
             links={[
                 ["Learn More", "https://docs.google.com/presentation/d/1HrbUpzwM75nluZ9jZCHrM3QzYHynYORhWvgdSZP9I9E/edit?usp=sharing"],

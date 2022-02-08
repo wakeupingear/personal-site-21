@@ -1352,6 +1352,11 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
+"@fontsource/poppins@^4.5.1":
+  "integrity" "sha512-7GlOGkOElhBVE5RHT33p7w9YDgiXHwx6W5TfBx2UDba8sydY17CRcAnY912/SfaAfkoDU71i+RbIwGfQMQxNlw=="
+  "resolved" "https://registry.npmjs.org/@fontsource/poppins/-/poppins-4.5.1.tgz"
+  "version" "4.5.1"
+
 "@formatjs/ecma402-abstract@1.9.8":
   "integrity" "sha512-2U4n11bLmTij/k4ePCEFKJILPYwdMcJTdnKVBi+JMWBgu5O1N+XhCazlE6QXqVO1Agh2Doh0b/9Jf1mSmSVfhA=="
   "resolved" "https://registry.npmjs.org/@formatjs/ecma402-abstract/-/ecma402-abstract-1.9.8.tgz"

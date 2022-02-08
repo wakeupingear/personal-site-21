@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1d2ff34.chunk.css",
-    "main.js": "/static/js/main.341a4dec.chunk.js",
-    "main.js.map": "/static/js/main.341a4dec.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a2101d16.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a2101d16.js.map",
-    "static/css/2.552c81ed.chunk.css": "/static/css/2.552c81ed.chunk.css",
-    "static/js/2.db2b83e4.chunk.js": "/static/js/2.db2b83e4.chunk.js",
-    "static/js/2.db2b83e4.chunk.js.map": "/static/js/2.db2b83e4.chunk.js.map",
-    "static/js/3.5191c879.chunk.js": "/static/js/3.5191c879.chunk.js",
-    "static/js/3.5191c879.chunk.js.map": "/static/js/3.5191c879.chunk.js.map",
+    "main.css": "/static/css/main.8d56e750.chunk.css",
+    "main.js": "/static/js/main.b527e15b.chunk.js",
+    "main.js.map": "/static/js/main.b527e15b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.69c28b7a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.69c28b7a.js.map",
+    "static/css/2.2fc0d6e2.chunk.css": "/static/css/2.2fc0d6e2.chunk.css",
+    "static/js/2.f472e363.chunk.js": "/static/js/2.f472e363.chunk.js",
+    "static/js/2.f472e363.chunk.js.map": "/static/js/2.f472e363.chunk.js.map",
+    "static/js/3.1aedd589.chunk.js": "/static/js/3.1aedd589.chunk.js",
+    "static/js/3.1aedd589.chunk.js.map": "/static/js/3.1aedd589.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.552c81ed.chunk.css.map": "/static/css/2.552c81ed.chunk.css.map",
-    "static/css/main.f1d2ff34.chunk.css.map": "/static/css/main.f1d2ff34.chunk.css.map",
-    "static/js/2.db2b83e4.chunk.js.LICENSE.txt": "/static/js/2.db2b83e4.chunk.js.LICENSE.txt",
+    "static/css/2.2fc0d6e2.chunk.css.map": "/static/css/2.2fc0d6e2.chunk.css.map",
+    "static/css/main.8d56e750.chunk.css.map": "/static/css/main.8d56e750.chunk.css.map",
+    "static/js/2.f472e363.chunk.js.LICENSE.txt": "/static/js/2.f472e363.chunk.js.LICENSE.txt",
     "static/media/3person.465fd22f.png": "/static/media/3person.465fd22f.png",
     "static/media/THK Client 2.3 - GameMaker Studio 2 12_15_2020 10_19_38 PM.0352de80.png": "/static/media/THK Client 2.3 - GameMaker Studio 2 12_15_2020 10_19_38 PM.0352de80.png",
     "static/media/Tiny Headed Kingdom 12_15_2020 10_08_22 PM.2340151d.png": "/static/media/Tiny Headed Kingdom 12_15_2020 10_08_22 PM.2340151d.png",
@@ -47,6 +47,7 @@
     "static/media/many inc ppl.ea9abfb9.png": "/static/media/many inc ppl.ea9abfb9.png",
     "static/media/music.89ef14ee.png": "/static/media/music.89ef14ee.png",
     "static/media/outsetBg.8ef91a4c.png": "/static/media/outsetBg.8ef91a4c.png",
+    "static/media/index.css": "/static/media/poppins-latin-ext-400-normal.4f38b433.woff2",
     "static/media/portrait.18de5bb5.png": "/static/media/portrait.18de5bb5.png",
     "static/media/remotionLogo.130e9146.jpg": "/static/media/remotionLogo.130e9146.jpg",
     "static/media/theBoys.cfaa769a.png": "/static/media/theBoys.cfaa769a.png",
@@ -55,10 +56,10 @@
     "static/media/thumbnail.ed923f6c.png": "/static/media/thumbnail.ed923f6c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a2101d16.js",
-    "static/css/2.552c81ed.chunk.css",
-    "static/js/2.db2b83e4.chunk.js",
-    "static/css/main.f1d2ff34.chunk.css",
-    "static/js/main.341a4dec.chunk.js"
+    "static/js/runtime-main.69c28b7a.js",
+    "static/css/2.2fc0d6e2.chunk.css",
+    "static/js/2.f472e363.chunk.js",
+    "static/css/main.8d56e750.chunk.css",
+    "static/js/main.b527e15b.chunk.js"
   ]
 }
