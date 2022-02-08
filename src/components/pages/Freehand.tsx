@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react'
-import Slideshow from '../Slideshow'
 
-import './Page.css'
-import LinkButton from "../LinkButton"
+import ProjectInfo from 'components/ProjectInfo'
 
 import i1 from "../../assets/freehand/hands.png"
 
@@ -11,38 +9,32 @@ interface Props {
 }
 
 export default function Freehand(props: Props): ReactElement {
+    const images:any[] = [
+        <iframe src="https://www.youtube.com/embed/ism-aDmwwI0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>,
+        i1
+    ]
+
     return (
-        <div className="pageHolder" id="FreehandPage">
-            <div className="pageTitle">Freehand VR</div>
-            <div className="pageColumn">
-                <div className="pageRow">
-                    <div className="pageColumn" style={{ width: "50%" }}>
-                        <div className="textBox">Markerless VR hand tracking system, created in 36 hours for <a href="https://www.hw.com/hackhw/index.html" target="_blank">HackHW Spring 2019</a>.</div>
-                        <div className="textBox">
-                            <ul>Tech Stack -
-                                <li>ML: Python/Tensorflow, CUDA</li>
-                                <li>Game: C#/Unity, SteamVR</li>
-                                <li>Hardware: Windows MR Headsets</li>
-                            </ul>
-                        </div>
-                        <div className="textBox">
-                            <ul>Collaborators
-                                <li><a href="https://github.com/BitsByWill" target="_blank">@BitsByWill</a></li>
-                                <li><a href="https://github.com/lukiebukie" target="_blank">@lukiebukie</a></li>
-                                <li><a href="https://github.com/yvettejade" target="_blank">@yvettejade</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <Slideshow >
-                        <img src={i1}></img>
-                        <iframe src="https://www.youtube.com/embed/ism-aDmwwI0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                    </Slideshow>
-                </div>
-                <div className="pageRow">
-                    <LinkButton link="https://docs.google.com/presentation/d/1HrbUpzwM75nluZ9jZCHrM3QzYHynYORhWvgdSZP9I9E/edit?usp=sharing">Learn More</LinkButton>
-                    <LinkButton link="https://github.com/freehandvr">Source Code</LinkButton>
-                </div>
-            </div>
-        </div>
+        <ProjectInfo
+            id="black"
+            color="#51464F"
+            title='Freehand VR'
+            text={[
+                <div>Markerless VR hand tracking system, created in 36 hours for <a href="https://www.hw.com/hackhw/index.html" target="_blank">HackHW Spring 2019</a></div>,
+                "Built with Python, TensorFlow, Unity, C#, and the Mixed Reality Toolkit"
+            ]}
+            images={images}
+            collaborators={[
+                ["Will Liu", "Hand Tracking","https://github.com/BitsByWill"],
+                ["Lukas Seklir", "ML Training", "https://github.com/lukiebukie"],
+                ["Yvette Copeland", "Positional Tracking", ],
+                ["Will Farhat", "Unity Development", "https://github.com/yvettejade"]
+            ]}
+            links={[
+                ["Learn More", "https://docs.google.com/presentation/d/1HrbUpzwM75nluZ9jZCHrM3QzYHynYORhWvgdSZP9I9E/edit?usp=sharing"],
+                ["Source Code", "https://github.com/freehandvr"],
+            ]}
+            date='March 2019'
+        />
     )
 }

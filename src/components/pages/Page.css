@@ -6,6 +6,20 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-width: 1vw;
+    z-index: 11;
+
+    box-shadow: 2px 2px 20px 13px rgba(0, 0, 0, 0.25);
+}
+
+.noSpacePage {
+    margin: 0;
+    padding: 1vw !important;
+    width: 100%;
 }
 
 @import "~react-image-gallery/styles/css/image-gallery.css";
@@ -22,19 +36,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    min-width: 30%;
+    min-width: 40%;
     padding: 1vw 2vw 1vw 2vw;
 }
+
+.jamColumn {}
 
 .pageRow {
     display: flex;
     flex-direction: row;
     padding: 1vw;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space;
     align-items: center;
     overflow: hidden;
+}
 
+.buttonRow {
+    display: flex;
+    justify-content: center;
 }
 
 .textBox {
@@ -45,27 +65,34 @@
     text-align: left;
     box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.1);
     border-radius: 1vw;
+    width: fit-content;
+}
+
+.linkButtonRow {
+    justify-content: space-evenly;
 }
 
 .linkButton {
-    border-radius: 4px;
+    border-radius: 1.2vw;
     background-color: lightcoral;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
     padding: 20px;
-    width: 200px;
+    width: fit-content;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2);
+
+    font-size: calc(8px + 1.5vmin);
+    transform: rotate(0deg);
 }
 
 .linkButton span {
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .linkButton span:after {
@@ -74,7 +101,11 @@
     opacity: 0;
     top: 0;
     right: -20px;
-    transition: 0.5s;
+    transition: 0.3s;
+}
+
+.linkButton:hover{
+    transform: rotate(-10deg);
 }
 
 .linkButton:hover span {
@@ -86,22 +117,6 @@
     right: 0;
 }
 
-#OutsetPage {
-    background-color: rgb(50, 105, 133)
-}
-
-#IncPage {
-    background-color: rgb(162, 65, 53);
-}
-
-#CFEPage {
-    background-color: grey;
-}
-
-#THKPage {
-    background-color: rgb(253, 200, 47);
-}
-
 #thkAnimals {
     width: 100%;
     height: 25vw;
@@ -110,35 +125,46 @@
 #thkAnimals img {
     height: 100%;
 }
-
-#FreehandPage {
-    background-color: black;
-}
-
-#FreehandPage .textBox {
+#freehand .textBox {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-#RemotionPage {
-    background-color: rgb(41, 57, 143);
-}
 
 #JamPage {
     background-color: rgb(246, 147, 72);
-}
-
-#EmotivePage {
-    background-color: #362a56;
 }
 
 #ResearchPage {
     background-color: #9F3434;
 }
 
-#YouTubePage {
-    background-color: #C9D5FD;
+.jamGame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(253, 200, 47);
+    border-radius: 20px;
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+    position: relative;
+    margin: 1vw;
 }
 
-#WillPage{
-    background-color: #0033FF;
+.jamGameTitle {
+    color: white;
+    font-size: calc(15px + 4vmin);
+    margin-top: 1vw;
+}
+
+.jamGameTitle * {
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.5vw;
+    border-radius: 1.5vw;
+}
+
+.black {
+    background-color: black;
+    color: white;
 }

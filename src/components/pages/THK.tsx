@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react'
-import Slideshow from '../Slideshow'
 
-import './Page.css'
-import LinkButton from "../LinkButton"
+import ProjectInfo from 'components/ProjectInfo'
 
 import i1 from "../../assets/thk/Tiny Headed Kingdom 12_15_2020 10_09_10 PM.png"
 import i2 from "../../assets/thk/Tiny Headed Kingdom 12_15_2020 10_18_28 PM.png"
@@ -25,47 +23,21 @@ interface Props {
 
 export default function THK(props: Props): ReactElement {
     return (
-        <div className="pageHolder" id="THKPage">
-            <div className="pageTitle">Tiny Headed Game</div>
-            <div className="pageColumn">
-                <div className="pageRow">
-                    <div className="pageColumn" style={{ minWidth: "65%" }}>
-                        <div id="thkAnimals">
-                            <img src={i3}></img>
-                        </div>
-                        <div className="textBox">Explore the multiplayer open world of the <a href="https://tinyheadedkingdom.com/" target="_blank">Tiny Headed Kindom</a>.</div>
-                        <div className="textBox">
-                            I developed this game for THK's Holdiay 2020 Campaign.
-                            In it, you explore various areas, including a tropical ocean, a bamboo forest, and an icy mountain. Along the way, you collect new outfits, help out the local Tiny Headed animals, and solve a series of riddles to unwravel the mysteries of the land.
-                        </div>
-                        <div className="textBox">
-                            <ul>Tech Stack -
-                                <li>Game: Gamemaker Studio 2, JS</li>
-                                <li>Backend: NodeJS, AWS Elastic Beanstalk</li>
-                                <li>DB: Firebase Realtime Database</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <Slideshow >
-                        <img src={i1}></img>
-                        <img src={i2}></img>
-                        <img src={i4}></img>
-                        <img src={i5}></img>
-                        <img src={i6}></img>
-                        <img src={i7}></img>
-                        <img src={i8}></img>
-                        <img src={i9}></img>
-                        <img src={i10}></img>
-                        <img src={i11}></img>
-                        <img src={i12}></img>
-                        <img src={i13}></img>
-                        <img src={i14}></img>
-                    </Slideshow>
-                </div>
-                <div className="pageRow">
-                    <LinkButton link="http://thkgame.com">Play Now!</LinkButton>
-                </div>
-            </div>
-        </div>
+        <ProjectInfo
+            id="thk"
+            color="#E5B489"
+            title='Tiny Headed Game'
+            text={[
+                <div>Explore the multiplayer open world of the <a href="https://tinyheadedkingdom.com/" target="_blank">Tiny Headed Kindom</a></div>,
+                "I developed this game for THK's Holdiay 2020 Campaign. In it, you explore various areas, including a tropical ocean, a bamboo forest, and an icy mountain. Along the way, you collect new outfits, help out the local Tiny Headed animals, and solve a series of riddles to unwravel the mysteries of the land.",
+                "Built with GameMaker Studio 2 and NodeJS. Deployed on AWS Elastic Beanstalk and Firebase.",
+                "Fun fact: this was my first published game!"
+            ]}
+            images={[i1,i3,i2,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14]}
+            links={[
+                ["Play Now!", "http://thkgame.com"],
+            ]}
+            date='December 2020'
+        />
     )
 }

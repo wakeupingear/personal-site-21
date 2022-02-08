@@ -105,12 +105,10 @@ export default function App() {
           {!isPortrait && <Sidebar />}
         </div>
         <div id="footer">
-          <div>
+          <div id="footerInfo">
             Site programmed and hosted by Will Farhat - {(new Date().getFullYear())}<br></br>
           </div>
-          <div>
-            Say Hi!
-            <span>&nbsp;&nbsp;</span>
+          <div id="footerClap">
             <ClapButton />
           </div>
         </div>

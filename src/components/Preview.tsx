@@ -18,17 +18,17 @@ export default function Preivew(props: PreviewBox) {
 
     useEffect(() => {
         const urlPath = window.location.pathname.substring(1);
-        if (urlPath == props.id) {
+        if (urlPath === props.id) {
             clicked();
         }
     }, []);
 
     return (
         <div className="previewBox clickable" onClick={clicked} style={props.style}>
-            {props.year !== undefined ? <div className="previewDate">
+            {props.year !== undefined ? <div className="previewDate" >
                 {props.year}
             </div> : null}
-            <img src={props.icon} alt={props.id}></img>
+            <img src={props.icon} alt={props.id} />
         </div>
     )
 }
