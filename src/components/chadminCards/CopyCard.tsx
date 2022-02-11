@@ -19,21 +19,21 @@ type Fields = {
 export default function CopyCard(props: Props): ReactElement {
     const strArr=[];
     for (let i=0;i<props.content.length;i++){
-        strArr.push([props.content[i][0],props.content[i][1]]);
+        strArr.push(props.content[i]);
     }
     const [data, setData] = useState(strArr);
     const completedFields:Fields = {};
     const addProperty = (result: string, label: string) => {
         const oldData = data;
-        oldData[completedFields[label]][1]=oldData[completedFields[label]][1].replace("$",result);
-        console.log(oldData)
+        let len=oldData[completedFields[label]].length;
+        oldData[completedFields[label]][(len>2)?1:0]=oldData[completedFields[label]][(len>2)?1:0].replace("$",result);
         setData(oldData => [...oldData]);
     }
     useEffect(() => {
         for (let i=0;i<props.content.length;i++){
             const element=props.content[i];
             completedFields[element[0]] = i;
-            if (element.length === 2) addProperty(element[2], element[1]);
+            if (element.length === 2) setAPIFromData("secrets/"+element[1], addProperty, element[0]);
             else for (let j = 2; j < element.length; j++) {
                 setAPIFromData("secrets/"+element[j], addProperty, element[0]);
             }

@@ -21,7 +21,12 @@ export default function ChadminDashboard({ }: Props): ReactElement {
     ];
 
     const commands = [
-        ["Router Login","ssh pi@$ -L 12345:192.168.1.1:80","ip"]
+        ["Router Login","ssh pi@$ -L 12345:192.168.1.1:80","ip"],
+        ["Writus views: $","writusViews"]
+    ]
+
+    const data = [
+        []
     ]
 
     return (
@@ -30,7 +35,7 @@ export default function ChadminDashboard({ }: Props): ReactElement {
             <div id="chadminGrid">
                 <CopyCard classColor='chadminGreen' title="Secret Info" content={secretContent} />
                 <LinkCard classColor='chadminBlue' />
-                <CopyCard classColor='chadminGreen' title="Commands" content={commands} />
+                <CopyCard classColor='chadminGreen' title="Useful Data" content={commands} />
                 <UploadCard classColor='chadminBlue' path='files' title='Public Files' />
                 <UploadCard classColor='chadminBlue' path='chadmin/files' title='Private Files' />
                 <DailyArt classColor='chadminOrange'/>
